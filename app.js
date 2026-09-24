@@ -309,4 +309,4 @@ viewport.addEventListener('touchend',e=>{const gesture=edgeGesture;if(!gesture)r
 viewport.addEventListener('touchcancel',()=>{if(edgeGesture?.frame)cancelAnimationFrame(edgeGesture.frame);edgeGesture?.under?.remove();edgeGesture=null;resetSwipe()},{passive:true});
 window.addEventListener('popstate',e=>{const previousLength=stack.length,wasSwipe=swipeCompleting;swipeCompleting=false;stack=[...(e.state?.stack||['root'])];if(stack.length<previousLength)scrollOffsets.length=stack.length;while(scrollOffsets.length<stack.length)scrollOffsets.push(0);resetSwipe();render(false,wasSwipe?'back-swipe':stack.length<previousLength?'back':'forward');document.querySelector('.swipe-under')?.remove();updateScrollHeader()});
 history.replaceState({stack:['root']},'',location.pathname+location.search);render();
-if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=33').catch(()=>{}));
