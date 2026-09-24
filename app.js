@@ -20,11 +20,19 @@ const paths = {
   privacy:'<path d="M12 2 4 5v6c0 5 3 9 8 11 5-2 8-6 8-11V5z"/><path d="m9 12 2 2 4-4"/>',
   wallet:'<rect x="2" y="5" width="20" height="16" rx="3"/><path d="M2 9h20M16 14h3"/>',
   accessibility:'<circle cx="12" cy="4" r="2"/><path d="M3 9h18m-9 0v5m0 0-5 7m5-7 5 7"/>',
+  'action-button':'<path d="M2 12h8m-3-3 3 3-3 3M12.5 21V7a5 5 0 0 1 5-5H22"/>',
   update:'<path d="M20 12a8 8 0 1 1-2.5-5.8M20 3v5h-5"/>',
   keyboard:'<rect x="2" y="5" width="20" height="14" rx="2"/><path d="M5 9h.01M9 9h.01M13 9h.01M17 9h.01M5 13h.01M9 13h.01M13 13h.01M17 13h.01M7 16h10"/>',
   about:'<circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7h.01"/>',
   search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 5 5"/>',
-  phone:'<rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 19h2"/>'
+  phone:'<rect x="6" y="2" width="12" height="20" rx="2"/><path d="M11 19h2"/>',
+  'id-card':'<rect x="2.5" y="3" width="19" height="18" rx="2" fill="currentColor" stroke="none"/><circle cx="9" cy="10" r="2" stroke="#888"/><path d="M5.5 16c.6-2 5.9-2 6.6 0M15 8h4M15 12h4M15 16h4" stroke="#888"/>',
+  'plus-circle':'<circle cx="12" cy="12" r="9"/><path d="M12 7v10M7 12h10"/>',
+  family:'<circle cx="8" cy="9" r="3" fill="#37a5fb" stroke="none"/><circle cx="16" cy="9" r="3" fill="#44da90" stroke="none"/><path d="M3 19c0-6 10-6 10 0m-2 0c0-6 10-6 10 0" stroke="#8680ee" stroke-width="3"/>',
+  find:'<circle cx="12" cy="12" r="9" stroke="#40d075" stroke-width="3"/><circle cx="12" cy="12" r="5" stroke="#08a6ef" stroke-width="3"/><circle cx="12" cy="12" r="2" fill="#1873da" stroke="none"/>',
+  'app-store':'<path d="M8 3l10 17M16 3 6 20M4 15h16" stroke-width="2.7"/>',
+  'apple-logo':'<path d="M16.7 7.1c-2.1-.3-2.8.8-4.2.8s-2.1-1-4-.8C4.7 8 3.8 12 5.1 16.1c1 2.9 2.4 5 4.3 5 1.3 0 1.9-.8 3.4-.8 1.5 0 2.1.8 3.4.8 1.8 0 3.1-2.1 4.1-4.4-3.2-1.6-3.3-6-.4-7.7-.7-.8-2.1-1.4-3.2-1.4ZM12.8 6.4c-.1-2.3 1.7-4 4-4.4.2 2-1.4 4-4 4.4Z" fill="#000" stroke="none"/>',
+  windows:'<path d="M2 3 11 2v9H2zm11-1L22 1v10h-9zM2 13h9v9l-9-1zm11 0h9v10l-9-1z" fill="#00a4ef" stroke="none"/>'
   ,link:'<path d="M10 13a5 5 0 0 0 7.1 0l2.5-2.5a5 5 0 0 0-7.1-7.1L11 4.9M14 11a5 5 0 0 0-7.1 0l-2.5 2.5a5 5 0 0 0 7.1 7.1l1.5-1.5"/>',
   drive:'<path d="M3 18h18l-4-7H7zM8 7l4-4 4 4M12 3v11"/>',
   sim:'<path d="M6 2h8l4 4v16H6zM14 2v4h4M8 11h8M8 15h8"/>',
@@ -38,18 +46,19 @@ const icon = name => `<svg viewBox="0 0 24 24" aria-hidden="true">${paths[name]|
 const sprites={
  airplane:['0042',112,1510],wifi:['0042',112,1672],bluetooth:['0042',112,1834],cellular:['0042',112,1996],hotspot:['0042',112,2158],battery:['0042',112,2320],
  general:['0043',112,530],accessibility:['0043',112,692],camera:['0043',112,854],standby:['0043',112,1016],wallpaper:['0043',112,1178],display:['0043',112,1340],homescreen:['0043',112,1502],siri:['0043',112,1664],'search-settings':['0043',112,1826],control:['0043',112,1988],
- notifications:['0044',112,388],sounds:['0044',112,550],focus:['0044',112,712],screentime:['0044',112,874],faceid:['0044',112,1139],sos:['0044',112,1301],privacy:['0044',112,1463],gamecenter:['0044',112,1742],icloud:['0044',112,1911],wallet:['0044',112,2077],apps:['0044',112,2321],developer:['0045',112,2354],
+ notifications:['0044',112,388],sounds:['0044',112,550],focus:['0044',112,712],screentime:['0044',112,874],faceid:['0044',112,1139],sos:['0044',112,1301],privacy:['0044',112,1463],gamecenter:['0044',113,1730],icloud:['0044',113,1892],wallet:['0044',113,2054],apps:['0044',112,2321],developer:['0045',112,2354],
  about:['0061',112,1162],software:['0061',112,1327],storage:['0061',112,1492],warranty:['0061',112,1754],airdrop:['0061',112,2032],airplay:['0061',112,2197],pip:['0061',112,2362],screenshots:['0061',112,2527],carplay:['0061',112,2692],
  keyboard:['0062',112,1446],controllers:['0062',112,1611],'background-refresh':['0062',112,1776],date:['0062',112,1941],language:['0062',112,2106],fonts:['0062',112,2271],dictionary:['0062',112,2436],'autofill-password':['0062',112,2601],
  'tv-provider':['0063',112,1376],vpn:['0063',112,1646],legal:['0063',112,1916],reset:['0063',112,2178],
  tiktok:['0052',112,1060],messenger:['0052',112,1293],facebook:['0052',112,1688],'system-services':['0052',112,1912],
  'hero-wifi':['0048',118,438],'hero-bluetooth':['0049',118,438],'hero-cellular':['0050',118,438],'hero-gear':['0061',118,438]
 };
-const spriteStyle=([file,x,y])=>`background-image:url('./assets/sprites/${file}-${x}-${y}.png');background-size:100% 100%;background-position:center`;
+const spriteUrl=([file,x,y])=>`./assets/sprites/${file}-${x}-${y}.png`;
+const spriteStyle=sprite=>`background-image:url('${spriteUrl(sprite)}');background-size:100% 100%;background-position:center`;
 const item = (label, id, color, glyph, extra={}) => ({label,id,color,glyph,sprite:sprites[id],...extra});
 const rootGroups = [
   [item('Chế độ máy bay','airplane','#ff9939','airplane',{type:'toggle'}),item('Wi-Fi','wifi','#0a84ff','wifi',{value:'Mạnh Vũ'}),item('Bluetooth','bluetooth','#0a84ff','bluetooth',{value:'Bật'}),item('Di động','cellular','#30c85a','cellular'),item('Điểm truy cập cá nhân','hotspot','#30c85a','link'),item('Pin','battery','#30c85a','battery')],
-  [item('Cài đặt chung','general','#98989e','gear'),item('Trợ năng','accessibility','#0a84ff','accessibility'),item('Camera','camera','#8e8e93','camera'),item('Chế độ chờ','standby','#1c1c1e','screen'),item('Hình nền','wallpaper','#11add1','screen'),item('Màn hình & Độ sáng','display','#0a84ff','screen'),item('Màn hình chính & Thư viện ứng dụng','homescreen','#0a84ff','phone'),item('Siri','siri','#542aa0','globe'),item('Tìm kiếm','search-settings','#8e8e93','search'),item('Trung tâm điều khiển','control','#8e8e93','app')],
+  [item('Cài đặt chung','general','#98989e','gear'),item('Trợ năng','accessibility','#0a84ff','accessibility'),item('Apple Intelligence & Siri','siri','#242429','intelligence',{sprite:null,referenceIcon:true}),item('Camera','camera','#8e8e93','camera'),item('Chế độ chờ','standby','#1c1c1e','screen'),item('Hình nền','wallpaper','#11add1','screen'),item('Màn hình & Độ sáng','display','#0a84ff','screen'),item('Màn hình chính & Thư viện ứng dụng','homescreen','#0a84ff','phone'),item('Nút Tác vụ','action-button','#0a84ff','action-button'),item('Tìm kiếm','search-settings','#8e8e93','search'),item('Trung tâm điều khiển','control','#8e8e93','app')],
   [item('Thông báo','notifications','#ff3b48','bell'),item('Âm thanh & Cảm ứng','sounds','#ff2d55','sound'),item('Tập trung','focus','#5856d6','moon'),item('Thời gian sử dụng','screentime','#5856d6','hourglass')],
   [item('Face ID & Mật mã','faceid','#34c759','lock'),item('SOS khẩn cấp','sos','#ff3b30','heart'),item('Quyền riêng tư & Bảo mật','privacy','#007aff','privacy')],
   [item('Game Center','gamecenter','#999','app'),item('iCloud','icloud','#5aa0ed','globe'),item('Ví & Apple Pay','wallet','#222','wallet')],
@@ -59,7 +68,7 @@ const rootGroups = [
 const detailIcons={about:['phone','#a1a1a7'],software:['gear','#a1a1a7'],storage:['storage','#a1a1a7'],warranty:['heart','#fff'],airdrop:['wifi','#fff'],airplay:['screen','#0a84ff'],pip:['screen','#242427'],screenshots:['camera','#a1a1a7'],carplay:['game','#30c85a'],keyboard:['keyboard','#a1a1a7'],controllers:['game','#a1a1a7'],date:['calendar','#0a84ff'],language:['globe','#0a84ff'],fonts:['app','#a1a1a7'],dictionary:['app','#0a84ff'],wifi:['wifi','#0a84ff'],bluetooth:['bluetooth','#0a84ff'],hotspot:['link','#30c85a'],cellular:['cellular','#30c85a']};
 const R=(label,id,extra={})=>({label,id,...(detailIcons[id]?{glyph:detailIcons[id][0],color:detailIcons[id][1]}:{}),sprite:sprites[id],...extra});
 const pages={
-  apple:{title:'Tài khoản Apple',groups:[{rows:[R('Thông tin cá nhân','personal-info'),R('Đăng nhập & Bảo mật','sign-in'),R('Thanh toán & Giao hàng','shipping'),R('Đăng ký','subscription')]},{rows:[R('iCloud','icloud',{value:'5 GB'}),R('Gia đình','family',{value:'Thiết lập'}),R('Tìm','find'),R('Phương tiện & Mục mua','purchases'),R('Đăng nhập bằng Apple','sign-in-apple')]},{rows:[R('iPhone','this-iphone',{subtitle:'iPhone 17 Pro Max này'}),R('iPhone của bạn','other-iphone',{subtitle:'iPhone SE'}),R('iPhone','third-iphone',{subtitle:'iPhone 16 Pro'})]},{rows:[R('Xác minh khóa liên hệ','contact-key',{value:'Tắt'})]},{rows:[R('Đăng xuất','signout',{accent:true})]}]},
+  apple:{title:'Tài khoản Apple',groups:[{rows:[R('Thông tin cá nhân','personal-info',{glyph:'id-card',color:'#a1a1a7'}),R('Đăng nhập & Bảo mật','sign-in',{glyph:'privacy',color:'#a1a1a7'}),R('Thanh toán & Giao hàng','shipping',{glyph:'wallet',color:'#a1a1a7'}),R('Đăng ký','subscription',{glyph:'plus-circle',color:'#a1a1a7'})]},{rows:[R('iCloud','icloud',{value:'50 GB'}),R('Gia đình','family',{glyph:'family',color:'#fff',value:'Thiết lập'}),R('Tìm','find',{glyph:'find',color:'#fff'}),R('Phương tiện & Mục mua','purchases',{glyph:'app-store',color:'#0a84ff'}),R('Đăng nhập bằng Apple','sign-in-apple',{glyph:'apple-logo',color:'#fff'})]},{rows:[R('oe oe','this-iphone',{glyph:'phone',color:'#243c7b',subtitle:'iPhone 16 Pro này'}),R('iPhone','other-iphone',{glyph:'phone',color:'#243c7b',subtitle:'iPhone 14 Pro Max'}),R('iPhone (2)','third-iphone',{glyph:'phone',color:'#476c7d',subtitle:'iPhone X'}),R('Windows','windows',{glyph:'windows',color:'#252525',subtitle:'Windows'})]},{rows:[R('Xác minh khóa liên hệ','contact-key',{glyph:'privacy',color:'#a1a1a7',value:'Tắt'})]},{rows:[R('Đăng xuất','signout',{accent:true})]}]},
   wifi:{title:'Wi-Fi',groups:[{rows:[R('Wi-Fi','wifi-enabled',{type:'toggle',default:true})]},{title:'MẠNG',rows:[R('Mạng Wi-Fi','network',{value:'Đã kết nối'}),R('Hỏi để kết nối mạng','ask-network',{value:'Thông báo'}),R('Tự động kết nối điểm truy cập','auto-hotspot',{value:'Hỏi để kết nối'})]}]},
   bluetooth:{title:'Bluetooth',groups:[{rows:[R('Bluetooth','bluetooth-enabled',{type:'toggle',default:true})],footer:'Thiết bị này có thể được phát hiện khi Bluetooth được bật.'},{title:'THIẾT BỊ CỦA TÔI',rows:[R('Chưa có thiết bị được kết nối','devices')]}]},
   cellular:{title:'Di động',groups:[{rows:[R('Dữ liệu di động','cellular-enabled',{type:'toggle',default:true}),R('Tùy chọn dữ liệu di động','data-options'),R('Điểm truy cập cá nhân','hotspot')]}]},
@@ -69,7 +78,7 @@ const pages={
   focus:{title:'Tập trung',groups:[{rows:[R('Không làm phiền','dnd',{type:'toggle'}),R('Ngủ','sleep',{type:'toggle'}),R('Cá nhân','personal',{type:'toggle'}),R('Làm việc','work',{type:'toggle'})]}]},
   screentime:{title:'Thời gian sử dụng',groups:[{rows:[R('Hoạt động ứng dụng & trang web','app-activity',{type:'toggle'}),R('Thời gian nghỉ','downtime'),R('Giới hạn ứng dụng','app-limits')]}]},
   general:{title:'Cài đặt chung',groups:[{rows:[R('Giới thiệu','about'),R('Cập nhật phần mềm','software'),R('Dung lượng iPhone','storage'),R('AirDrop','airdrop'),R('AirPlay & Thông suốt','airplay'),R('Hình trong hình','pip'),R('CarPlay','carplay')]},{rows:[R('Ngày & Giờ','date'),R('Bàn phím','keyboard'),R('Phông chữ','fonts'),R('Ngôn ngữ & Vùng','language'),R('Từ điển','dictionary'),R('Chuyển hoặc đặt lại iPhone','reset')]}]},
-  about:{title:'Giới thiệu',groups:[{rows:[R('Tên','device-name',{value:'iPhone'}),R('Phiên bản iOS','ios-version',{value:'26.5.2'}),R('Tên máy','model-name',{value:'iPhone 17 Pro Max'}),R('Số máy','model-number',{value:'••••••••'}),R('Số sê-ri','serial',{value:'••••••••'})]},{rows:[R('Gói bảo hành đã hết hạn','warranty')]},{rows:[R('Lịch sử linh kiện & dịch vụ','parts')]},{rows:[R('Bài hát','songs',{value:'0'}),R('Video','videos',{value:'0'}),R('Ảnh','photos',{value:'71'}),R('Ứng dụng','application-count',{value:'19'}),R('Dung lượng','capacity',{value:'128 GB'}),R('Khả dụng','available',{value:'72,49 GB'})]},{rows:[R('Địa chỉ Wi-Fi','wifi-address',{value:'••:••:••:••:••:••'}),R('Bluetooth','bluetooth-address',{value:'••:••:••:••:••:••'}),R('Vi chương trình modem','firmware',{value:'4.51.04'}),R('SEID','seid'),R('EID','eid',{value:'••••••••••••••••'}),R('Khóa mạng','carrier-lock',{value:'Không giới hạn SIM'})]},{title:'SIM VẬT LÝ',rows:[R('Mạng','carrier-name',{value:'VinaPhone'}),R('Nhà cung cấp','carrier-version',{value:'VinaPhone 70.0'}),R('IMEI','imei',{value:'•• •••••• •••••• •'}),R('ICCID','iccid',{value:'••••••••••••••••••••'})]},{title:'SIM KHẢ DỤNG',rows:[R('IMEI2','imei2',{value:'•• •••••• •••••• •'})]},{rows:[R('Cài đặt tin cậy chứng nhận','trust')]}]},
+  about:{title:'Giới thiệu',groups:[{rows:[R('Tên','device-name',{value:'oe oe'}),R('Phiên bản iOS','ios-version',{value:'26.6'}),R('Tên máy','model-name',{value:'iPhone 16 Pro'}),R('Số máy','model-number',{value:'MYMC3LL/A'}),R('Số sê-ri','serial',{value:'DK0FKGV6C1'})]},{rows:[R('Gói bảo hành đã hết hạn','warranty')]},{rows:[R('Bài hát','songs',{value:'0'}),R('Video','videos',{value:'319'}),R('Ảnh','photos',{value:'3.932'}),R('Ứng dụng','application-count',{value:'49'}),R('Dung lượng','capacity',{value:'128 GB'}),R('Khả dụng','available',{value:'30,94 GB'})]},{rows:[R('Địa chỉ Wi-Fi','wifi-address',{value:'74:42:18:7F:D2:AC'}),R('Bluetooth','bluetooth-address',{value:'74:42:18:77:38:56'}),R('Vi chương trình modem','firmware',{value:'2.70.01'}),R('SEID','seid'),R('EID','eid',{value:'89049032007408885100201704913267',subtitle:'89049032007408885100201704913267'}),R('Khóa mạng','carrier-lock',{value:'Không giới hạn SIM'})]},{title:'eSIM',rows:[R('Mạng','carrier-name',{value:'Viettel'}),R('Nhà cung cấp','carrier-version',{value:'Viettel 70.0'}),R('IMEI2','imei2',{value:'35 890660 205481 5'}),R('ICCID','iccid',{value:'89840480009419250637'})]},{title:'SIM khả dụng',rows:[R('IMEI','imei',{value:'35 890660 213525 9'})]},{rows:[R('Cài đặt tin cậy chứng nhận','trust')]}]},
   software:{title:'Cập nhật phần mềm',special:'update'},
   storage:{title:'Dung lượng iPhone',groups:[{rows:[R('Dung lượng','capacity',{value:'Mô phỏng'}),R('Khả dụng','available',{value:'—'})]}]},
   display:{title:'Màn hình & Độ sáng',groups:[{title:'GIAO DIỆN',rows:[R('Sáng','appearance-light',{type:'choice',group:'appearance'}),R('Tối','appearance-dark',{type:'choice',group:'appearance',default:true}),R('Tự động','appearance-auto',{type:'toggle'})]},{title:'ĐỘ SÁNG',range:'brightness'},{rows:[R('True Tone','true-tone',{type:'toggle',default:true}),R('Night Shift','night-shift'),R('Khóa tự động','auto-lock',{value:'30 giây'}),R('Nâng lên để bật','raise',{type:'toggle',default:true})]}]},
@@ -79,40 +88,43 @@ const pages={
   apps:{title:'Ứng dụng',groups:[{rows:['App Store','Camera','Danh bạ','Ghi chú','Lịch','Safari','Tin nhắn','Điện thoại','Ảnh'].map(label=>R(label,'app-'+label))}]}
 };
 for(const g of pages.about.groups)for(const r of g.rows||[]){
- if(['model-name','songs','videos','photos','application-count','capacity','available','firmware','carrier-lock','carrier-name','carrier-version'].includes(r.id))r.plainValue=true;
- if(['model-number','serial','wifi-address','bluetooth-address','eid','imei','iccid','imei2'].includes(r.id))r.editable=true;
+ if(['model-name','model-number','serial','songs','videos','photos','application-count','capacity','available','wifi-address','bluetooth-address','firmware','eid','carrier-lock','carrier-name','carrier-version','imei','imei2','iccid'].includes(r.id))r.plainValue=true;
+ if(r.value!==undefined||r.id==='seid')r.editable=true;
 }
 Object.assign(pages,{
  'wifi-network':{title:'Mạnh Vũ',groups:[{rows:[R('Tự động kết nối','auto-join',{type:'toggle',default:true}),R('Mật khẩu','network-password',{value:'••••••••',editable:true})]},{rows:[R('Địa chỉ Wi-Fi riêng tư','private-address',{value:'Cố định'}),R('Giới hạn theo dõi địa chỉ IP','limit-ip',{type:'toggle',default:true})]},{rows:[R('Định cấu hình IP','config-ip',{value:'Tự động'}),R('Định cấu hình DNS','config-dns',{value:'Tự động'}),R('HTTP Proxy','proxy',{value:'Tắt'})]}]},
  'data-options':{title:'Tùy chọn dữ liệu di động',groups:[{rows:[R('Chuyển vùng dữ liệu','roaming',{type:'toggle'}),R('Thoại & dữ liệu','voice-data',{value:'5G tự động'}),R('Chế độ dữ liệu','data-mode',{value:'Tiêu chuẩn'})]}]},
  'network-selection':{title:'Lựa chọn mạng',groups:[{rows:[R('Tự động','auto-network',{type:'toggle',default:true})]},{title:'MẠNG',rows:[R('VinaPhone','carrier-vn',{type:'choice',default:true})]}]},
  'battery-health':{title:'Tình trạng pin & Sạc',groups:[{rows:[R('Dung lượng tối đa','maximum-capacity',{value:'Chưa xác minh',plainValue:true}),R('Sạc pin được tối ưu hóa','optimized-charge',{type:'toggle',default:true})]}]},
- 'icloud':{title:'iCloud',groups:[{rows:[R('Dung lượng iCloud','icloud-storage',{value:'5 GB'}),R('Ảnh','icloud-photos'),R('iCloud Drive','icloud-drive',{type:'toggle',default:true}),R('Sao lưu iCloud','icloud-backup',{type:'toggle',default:true})]}]},
- 'ios-version':{title:'Phiên bản iOS',groups:[{rows:[R('iOS 26.5.2','ios-build',{value:'Bản mô phỏng'})]}]},
+ 'icloud':{title:'iCloud',groups:[{rows:[R('Dung lượng iCloud','icloud-storage',{value:'50 GB'}),R('Ảnh','icloud-photos'),R('iCloud Drive','icloud-drive',{type:'toggle',default:true}),R('Sao lưu iCloud','icloud-backup',{type:'toggle',default:true})]}]},
+ 'ios-version':{title:'Phiên bản iOS',groups:[{rows:[R('iOS 26.6','ios-build',{value:'Bản mô phỏng'})]}]},
  'all-data':{title:'Dữ liệu di động',groups:[{rows:[R('TikTok','tiktok',{value:'482 MB'}),R('Messenger','messenger',{value:'244 MB'}),R('Điểm truy cập cá nhân','hotspot-usage',{value:'219 MB'}),R('Facebook','facebook',{value:'157 MB'}),R('Dịch vụ hệ thống','system-services',{value:'58,8 MB'}),R('Wi-Fi Assist','wifi-assist',{value:'570 KB'})]}]}
 });
 const state=(()=>{try{return JSON.parse(localStorage.getItem('ios-settings-demo')||'{}')}catch{return {}}})();
 const save=()=>{try{localStorage.setItem('ios-settings-demo',JSON.stringify(state))}catch{}};
 let stack=['root'];let scrollOffsets=[0],swipeCompleting=false; const viewport=document.getElementById('viewport');
+const searchDock=document.getElementById('search-dock');
+searchDock.innerHTML=`<label class="search">${icon('search')}<input id="search" type="search" placeholder="Tìm kiếm" autocomplete="off" aria-label="Tìm kiếm cài đặt"></label>`;
 const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function liquidSwitch(on){return `<span class="switch liquid-switch ${on?'on':''}" style="--thumb-x:${on?'20px':'0px'};--liquid-progress:${on?'100%':'0%'}" aria-hidden="true"><span class="lt-indicator"></span><span class="lt-knockout"><span class="lt-indicator--masked"><span class="lt-mask"></span></span></span><span class="lt-wrapper"><span class="lt-liquids"><span class="lt-liquid__shadow"></span><span class="lt-liquid__track"></span></span></span><span class="lt-knob"><span class="lt-knob__shadow"></span><span class="lt-knob__cover"></span></span></span>`}
 function row(data,mode='detail'){
   const isToggle=data.type==='toggle', isChoice=data.type==='choice';
   const value=state[data.id]??data.default??false;
   const glyph=data.appIcon||data.glyph;
-  const leading=data.sprite?`<span class="icon native-icon" style="${spriteStyle(data.sprite)}" aria-hidden="true"></span>`:glyph?`<span class="icon ${data.appIcon?'brand-'+data.appIcon:''}" style="background:${data.color||'#242429'}">${data.appIcon==='facebook'?'<b>f</b>':data.appIcon==='tiktok'?'<b>♪</b>':data.appIcon==='messenger'?'<b>ϟ</b>':icon(glyph)}</span>`:'';
+  const leading=data.referenceIcon?'<span class="icon intelligence-reference" aria-hidden="true"></span>':data.sprite?`<img class="icon native-icon" src="${spriteUrl(data.sprite)}" alt="" draggable="false">`:glyph?`<span class="icon ${data.appIcon?'brand-'+data.appIcon:''}" style="background:${data.color||'#242429'}">${data.appIcon==='facebook'?'<b>f</b>':data.appIcon==='tiktok'?'<b>♪</b>':data.appIcon==='messenger'?'<b>ϟ</b>':icon(glyph)}</span>`:'';
   const display=data.editable?(state[data.id]?(data.id.includes('password')?'••••••••':state[data.id]):data.value):data.value;
-  const trailing=isToggle?`<span class="switch ${value?'on':''}" aria-hidden="true"></span>`:isChoice?(value?'<span class="check">✓</span>':''):`${display?`<span class="row-trailing">${escapeHTML(display)}</span>`:''}${data.plainValue?'':'<span class="chevron"></span>'}`;
+  const subtitle=data.id==='eid'?(state.eid??data.subtitle):data.subtitle;
+  const trailing=isToggle?liquidSwitch(!!value):isChoice?(value?'<span class="check">✓</span>':''):`${display?`<span class="row-trailing">${escapeHTML(display)}</span>`:''}${data.plainValue?'':'<span class="chevron"></span>'}`;
   const action=isToggle?'toggle':isChoice?'choice':data.editable?'edit':data.plainValue?'copy':'open';
-  return `<button class="row ${leading?'':'plain'} ${data.subtitle?'two-line':''} ${data.accent?'accent':''}" data-id="${escapeHTML(data.id)}" data-action="${action}" ${data.plainValue?`data-value="${escapeHTML(data.value)}"`:''} ${isToggle?`role="switch" aria-checked="${!!value}"`:''}><span class="row-main">${leading}<span class="row-label">${escapeHTML(data.label)}${data.subtitle?`<small>${escapeHTML(data.subtitle)}</small>`:''}</span>${trailing}</span></button>`;
+  return `<button class="row ${leading?'':'plain'} ${subtitle?'two-line':''} ${data.accent?'accent':''}" data-id="${escapeHTML(data.id)}" data-action="${action}" ${data.plainValue?`data-value="${escapeHTML(data.value)}"`:''} ${isToggle?`role="switch" aria-checked="${!!value}"`:''}><span class="row-main">${leading}<span class="row-label">${escapeHTML(data.label)}${subtitle?`<small>${escapeHTML(subtitle)}</small>`:''}</span>${trailing}</span></button>`;
 }
 function group(g){return `<section class="group">${g.title?`<h2 class="group-title">${escapeHTML(g.title)}</h2>`:''}${g.range?`<div class="rows"><div class="range-wrap"><input type="range" min="0" max="100" value="${state[g.range]??(g.range==='brightness'?65:55)}" data-range="${g.range}" aria-label="${g.range==='brightness'?'Độ sáng':'Âm lượng'}"><div class="range-labels"><span>${g.range==='brightness'?'☀':'◖'}</span><span>${g.range==='brightness'?'☀':'◕'}</span></div></div></div>`:`<div class="rows">${g.rows.map(x=>row(x)).join('')}</div>`}${g.footer?`<p class="group-footer">${escapeHTML(g.footer)}</p>`:''}</section>`}
 function rootPage(query=''){
-  const search=`<div class="search-wrap"><label class="search">${icon('search')}<input id="search" type="search" placeholder="Tìm kiếm" autocomplete="off" value="${escapeHTML(query)}" aria-label="Tìm kiếm cài đặt"></label></div>`;
   if(query.trim()){
     const q=query.toLocaleLowerCase('vi').trim(); const matches=rootGroups.flat().filter(x=>x.label.toLocaleLowerCase('vi').includes(q));
-    return `<div class="page root-page"><div class="compact-header">Cài đặt</div><h1 class="large-title">Cài đặt</h1>${search}<section class="group search-results"><div class="rows">${matches.map(x=>row(x)).join('')||'<div class="empty">Không tìm thấy kết quả</div>'}</div></section></div>`;
+    return `<div class="page root-page"><div class="compact-header">Cài đặt</div><h1 class="large-title">Cài đặt</h1><section class="group search-results"><div class="rows">${matches.map(x=>row(x)).join('')||'<div class="empty">Không tìm thấy kết quả</div>'}</div></section></div>`;
   }
-  return `<div class="page root-page"><div class="compact-header">Cài đặt</div><h1 class="large-title">Cài đặt</h1>${search}<section class="group"><div class="rows account-card"><button class="row profile" data-id="apple" data-action="open"><span class="avatar native-avatar"></span><span><span class="profile-name">quan chuy dio</span><br><span class="profile-sub">Tài khoản Apple, iCloud, v.v.</span></span><span class="chevron"></span></button>${row(R('Dung Lượng iCloud Gần Đầy','icloud',{value:'❶'}))}</div></section><section class="group"><div class="rows">${row(R('Hoàn tất sửa chữa pin của bạn','battery-repair',{value:'❶'}))}${row(R('Hoàn tất sửa chữa camera của bạn','camera-repair',{value:'❶'}))}</div></section>${rootGroups.map(g=>group({rows:g})).join('')}<div class="footer-note">Giao diện mô phỏng</div></div>`;
+  return `<div class="page root-page"><div class="compact-header">Cài đặt</div><h1 class="large-title">Cài đặt</h1><section class="group"><div class="rows account-card"><button class="row profile" data-id="apple" data-action="open"><span class="avatar native-avatar"></span><span><span class="profile-name">quan chuy dio</span><br><span class="profile-sub">Tài khoản Apple, iCloud, v.v.</span></span><span class="chevron"></span></button></div></section>${rootGroups.map(g=>group({rows:g})).join('')}<div class="footer-note">Giao diện mô phỏng</div></div>`;
 }
 const heroData={
  wifi:['wifi','#0a84ff','Wi-Fi','Kết nối vào Wi-Fi, xem các mạng khả dụng, cũng như quản lý cài đặt để kết nối mạng và điểm truy cập ở gần.'],
@@ -122,9 +134,11 @@ const heroData={
  general:['gear','#8e8e93','Cài đặt chung','Quản lý thiết lập và tùy chọn tổng thể của bạn cho iPhone, từ phiên bản cập nhật phần mềm, ngôn ngữ thiết bị, CarPlay, AirDrop, v.v.']
 };
 function hero(data){const sprite=sprites['hero-'+data[0]];return `<div class="hero-card"><div class="hero-icon ${sprite?'native-hero':''}" style="${sprite?spriteStyle(sprite):`background:${data[1]}`}">${sprite?'':icon(data[0])}</div><h1>${escapeHTML(data[2])}</h1><p>${escapeHTML(data[3])} <span>Tìm hiểu thêm...</span></p></div>`}
+function bluetoothDevice(label,connected=false){return `<button class="row bluetooth-device" data-id="${escapeHTML(label)}" data-action="open"><span class="row-main"><span class="row-label">${escapeHTML(label)}</span><span class="row-trailing">${connected?'Đã kết nối':'Không kết nối'}</span><span class="bluetooth-info" aria-hidden="true">i</span></span></button>`}
 function detailContent(id,config){
+ if(id==='apple'||id==='about')return (config.groups||[]).map(group).join('');
  if(id==='wifi')return `${hero(heroData.wifi)}${group({rows:[R('Wi-Fi','wifi-enabled',{type:'toggle',default:true}),R('✓  Mạnh Vũ','wifi-network',{value:'ⓘ'})]})}<h2 class="inline-section-title">Mạng ⌁</h2>${group({rows:[R('Khác...','other-networks')]})}${group({rows:[R('Hỏi để kết nối mạng','ask-network',{value:'Thông báo'})],footer:'Các mạng đã biết sẽ được kết nối tự động. Nếu không có sẵn mạng đã biết nào, bạn sẽ được thông báo về các mạng có sẵn.'})}${group({rows:[R('Tự động kết nối điểm truy cập','auto-hotspot',{value:'Hỏi để kết nối'})]})}`;
- if(id==='bluetooth')return `${hero(heroData.bluetooth)}${group({rows:[R('Bluetooth','bluetooth-enabled',{type:'toggle',default:true})],footer:'Các thiết bị đã ghép nối với iPhone này có thể được tìm thấy ở đây.'})}<h2 class="inline-section-title">THIẾT BỊ CỦA TÔI</h2>${group({rows:[R('Xbox Wireless Controller','controller',{value:'Không kết nối'})]})}<h2 class="inline-section-title">CÁC THIẾT BỊ KHÁC ⌁</h2>`;
+ if(id==='bluetooth')return `<section class="bluetooth-hero"><div class="hero-icon native-hero" style="${spriteStyle(sprites['hero-bluetooth'])}"></div><h1>Bluetooth</h1><p>Kết nối với các phụ kiện mà bạn có thể sử dụng cho những hoạt động như truyền phát nhạc, gọi điện thoại và chơi trò chơi.</p><p class="learn-more">Tìm hiểu thêm...</p><div class="bluetooth-hero-toggle">${row(R('Bluetooth','bluetooth-enabled',{type:'toggle',default:true}))}</div></section><p class="bluetooth-footnote">Có thể tìm thấy iPhone này với tên “oe oe” trong khi Cài đặt Bluetooth được mở.</p><h2 class="bluetooth-heading">Thiết bị của tôi</h2><section class="group bluetooth-list"><div class="rows">${[['AB4085'],['BOSS ELAC'],['NP AUDIO'],['omoda'],['Xiaomi Smart Band 10 FB91',true],['Xiaomi Smart Band 9 5...'],['😎😎✌️✌️']].map(([name,connected])=>bluetoothDevice(name,connected)).join('')}</div></section><h2 class="bluetooth-heading other-devices">Các thiết bị khác <span class="bluetooth-spinner" aria-hidden="true"></span></h2><p class="bluetooth-footnote bluetooth-footer">Để ghép đôi Apple Watch với iPhone của bạn, hãy đi tới <span>Ứng dụng Apple Watch.</span></p>`;
   if(id==='cellular')return `${hero(heroData.cellular)}${group({rows:[R('Dữ liệu di động','cellular-enabled',{type:'toggle',default:true}),R('Tùy chọn dữ liệu di động','data-options',{value:'Chuyển vùng: Tắt'}),R('Điểm truy cập cá nhân','hotspot',{value:'Bật'})],footer:'Tắt dữ liệu di động để truyền tất cả dữ liệu qua Wi-Fi, bao gồm email, duyệt web và thông báo đẩy.'})}<h2 class="inline-section-title">VinaPhone</h2>${group({rows:[R('Lựa chọn mạng','network-selection',{value:'VinaPhone'}),R('Số của tôi','my-number'),R('Cuộc gọi Wi-Fi','wifi-calling',{value:'Tắt'}),R('Cuộc gọi trên thiết bị khác','other-calls',{value:'Khi ở gần'}),R('Dịch vụ nhà cung cấp','carrier-services'),R('PIN của SIM','sim-pin'),R('Ứng dụng của SIM','sim-apps')]})}${group({rows:[R('Thêm eSIM','esim',{accent:true})]})}<h2 class="inline-section-title">DỮ LIỆU DI ĐỘNG</h2>${group({rows:[R('Đến hiện tại','current-data',{value:'1,33 GB',plainValue:true}),R('Chuyển vùng đến hiện tại','roaming-data',{value:'0 KB',plainValue:true}),R('TikTok','tiktok',{subtitle:'482 MB',type:'toggle',default:true,appIcon:'tiktok'}),R('Messenger','messenger',{subtitle:'244 MB',type:'toggle',default:true,appIcon:'messenger'}),R('Điểm truy cập cá nhân','hotspot-usage',{value:'219 MB',appIcon:'hotspot'}),R('Facebook','facebook',{subtitle:'157 MB',type:'toggle',default:true,appIcon:'facebook'}),R('Dịch vụ hệ thống','system-services',{value:'58,8 MB',appIcon:'gear'}),R('Hiển thị tất cả','all-data')]})}${group({rows:[R('Wi-Fi Assist','wifi-assist',{subtitle:'570 KB',type:'toggle',default:true})],footer:'Tự động sử dụng dữ liệu di động khi tín hiệu kết nối Wi-Fi kém.'})}${group({rows:[R('iCloud Drive','icloud-drive',{type:'toggle',default:true})],footer:'Sử dụng mạng di động để chuyển tài liệu và dữ liệu khi không có kết nối Wi-Fi.'})}${group({rows:[R('Sao lưu iCloud','icloud-backup',{type:'toggle',default:true})],footer:'Sử dụng mạng di động của bạn để tự động sao lưu vào iCloud khi không có kết nối Wi-Fi.'})}<h2 class="inline-section-title">THỜI GIAN GỌI</h2>${group({rows:[R('Đến hiện tại','calls-current',{value:'10 phút',plainValue:true}),R('Thời lượng','calls-lifetime',{value:'10 phút',plainValue:true})]})}<h2 class="inline-section-title">THỐNG KÊ SỬ DỤNG DI ĐỘNG</h2>${group({rows:[R('Bật thống kê sử dụng di động','usage-enabled',{type:'toggle',default:true}),R('Đặt lại số liệu thống kê','reset-usage',{accent:true})],footer:'Đặt lại sau cùng: 10:43 ngày 20 thg 9, 2026'})}`;
   if(id==='hotspot')return `${hero(heroData.hotspot)}${group({rows:[R('Cho phép người khác kết nối','hotspot-enabled',{type:'toggle',default:true}),R('Mật khẩu Wi-Fi','hotspot-password',{value:'••••••••',editable:true})],footer:'Cho phép người dùng hoặc thiết bị khác không được đăng nhập vào iCloud tìm kiếm mạng được chia sẻ “iPhone” khi bạn ở trong cài đặt Điểm truy cập cá nhân.'})}${group({rows:[R('Tăng tối đa khả năng tương thích','compatibility',{type:'toggle'})],footer:'Khi bật tùy chọn này, hiệu năng internet có thể bị giảm đối với các thiết bị được kết nối vào điểm truy cập của bạn.'})}${group({rows:[R('Sử dụng dữ liệu','hotspot-usage',{value:'219 MB'})]})}<div class="connection-help"><div>${icon('wifi')}<span><b>ĐỂ KẾT NỐI BẰNG WI-FI</b><br>Chọn “iPhone” từ cài đặt Wi-Fi trên máy tính hoặc thiết bị khác của bạn.</span></div><div>${icon('bluetooth')}<span><b>ĐỂ KẾT NỐI BẰNG BLUETOOTH</b><br>Ghép đôi iPhone với máy tính, sau đó kết nối qua Bluetooth.</span></div><div>${icon('link')}<span><b>ĐỂ KẾT NỐI BẰNG USB</b><br>Cắm iPhone vào máy tính và chọn kết nối mạng.</span></div></div>`;
  if(id==='general')return `${hero(heroData.general)}${group({rows:[R('Giới thiệu','about'),R('Cập nhật phần mềm','software'),R('Dung lượng iPhone','storage')]})}${group({rows:[R('AppleCare & Bảo hành','warranty')]})}${group({rows:[R('AirDrop','airdrop'),R('AirPlay & Thông suốt','airplay'),R('Hình trong hình','pip'),R('Chụp ảnh màn hình','screenshots'),R('CarPlay','carplay')]})}${group({rows:[R('Bàn phím','keyboard'),R('Bộ điều khiển trò chơi','controllers'),R('Làm mới ứng dụng trong nền','background-refresh'),R('Ngày & Giờ','date'),R('Ngôn ngữ & Vùng','language'),R('Phông chữ','fonts'),R('Từ điển','dictionary'),R('Tự động điền & Mật khẩu','autofill-password')]})}${group({rows:[R('Nhà cung cấp TV','tv-provider'),R('Quản lý VPN & thiết bị','vpn')]})}${group({rows:[R('Pháp lý & Quy định','legal'),R('Chuyển hoặc đặt lại iPhone','reset')]})}`;
@@ -135,22 +149,79 @@ function detailPage(id){
  const config=pages[id]||{title:labelFor(id),groups:[{rows:[R('Thông tin','info-'+id,{value:'Mô phỏng'})]}]};
  const nav=`<nav class="detail-nav"><button class="back" id="back" aria-label="Quay lại"></button><span>${escapeHTML(config.title)}</span></nav>`;
  if(config.special==='update')return `<div class="page detail-page">${nav}<div class="center-detail"><div class="hero-glyph">${icon('update')}</div><h2>iOS 26</h2><p>Trang này chỉ mô phỏng giao diện.</p></div></div>`;
- return `<div class="page detail-page">${nav}${id==='apple'?`<div class="apple-head"><span class="avatar native-avatar"></span><h1>quan chuy dio</h1><p>Tài khoản Apple</p></div>`:''}${detailContent(id,config)}</div>`;
+ return `<div class="page detail-page ${id==='apple'?'apple-page':id==='bluetooth'?'bluetooth-page':id==='about'?'about-page':''}">${nav}${id==='apple'?`<div class="apple-head"><span class="avatar account-initials">DM</span><h1>Đỗ Viết Mạnh</h1><p>dovietmanh2006@gmail.com</p></div>`:''}${detailContent(id,config)}</div>`;
 }
 function labelFor(id){const all=[...rootGroups.flat(),...Object.values(pages).flatMap(p=>p.groups?.flatMap(g=>g.rows||[])||[])];return all.find(x=>x.id===id)?.label||id.replace(/^app-/,'')}
+const pageCache=[];
+let slideToken=0,enterAnimation=null,enterTransitionEnd=null;
+function makePage(id){const holder=document.createElement('div');holder.innerHTML=id==='root'?rootPage(searchDock.querySelector('input')?.value||''):detailPage(id);return holder.firstElementChild}
 function render(keepScroll=false,direction=''){
- const y=viewport.scrollTop, animated=!!direction&&!matchMedia('(prefers-reduced-motion: reduce)').matches;
- document.querySelector('.outgoing')?.remove();
- if(animated&&viewport.firstElementChild){const ghost=document.createElement('div');ghost.className='outgoing leave-'+direction;ghost.setAttribute('aria-hidden','true');const body=document.createElement('div');body.className='outgoing-inner';body.innerHTML=viewport.innerHTML;body.style.transform=`translateY(-${y}px)`;ghost.append(body);document.querySelector('.app').append(ghost);setTimeout(()=>ghost.remove(),450)}
- viewport.innerHTML=stack.at(-1)==='root'?rootPage():detailPage(stack.at(-1));viewport.scrollTop=keepScroll?y:0;
+ const navigation=direction==='back-swipe'?'back':direction;
+ const y=viewport.scrollTop,oldPage=viewport.firstElementChild,animated=!!direction&&direction!=='back-swipe'&&(direction==='forward'||!matchMedia('(prefers-reduced-motion: reduce)').matches);
+ const token=++slideToken;enterAnimation?.cancel();enterAnimation=null;if(enterTransitionEnd){viewport.removeEventListener('transitionend',enterTransitionEnd);enterTransitionEnd=null}viewport.classList.remove('is-entering');viewport.style.transition='';viewport.style.transform='';
+ document.querySelectorAll('.outgoing').forEach(ghost=>ghost.remove());
+ const depth=stack.length-1;
+ if(navigation==='forward'&&oldPage)pageCache[depth-1]=oldPage;
+ const cached=navigation==='back'?pageCache[depth]:null;
+ const nextPage=cached||makePage(stack[depth]);
+ if(navigation==='back')pageCache.length=depth;
+ if(animated&&oldPage){
+  oldPage.classList.remove('enter-forward','enter-back');
+  const ghost=document.createElement('div');
+  ghost.className='outgoing leave-'+direction;ghost.setAttribute('aria-hidden','true');
+  ghost.append(oldPage);document.querySelector('.app').append(ghost);ghost.scrollTop=y;
+  ghost.addEventListener('animationend',()=>ghost.remove(),{once:true});
+  setTimeout(()=>ghost.remove(),direction==='forward'?620:430);
+ }
+ viewport.replaceChildren(nextPage);
+ viewport.scrollTop=keepScroll?y:navigation==='back'?(scrollOffsets[depth]||0):0;
+ searchDock.hidden=stack[depth]!=='root'||(animated&&navigation==='back');
+ if(stack[depth]==='root'&&animated&&navigation==='back')setTimeout(()=>{if(stack.length===1)searchDock.hidden=false},340);
  document.body.classList.toggle('light',state['appearance-light']===true);document.querySelector('meta[name="theme-color"]').content=state['appearance-light']===true?'#f2f2f7':'#000000';
- if(animated){const page=viewport.firstElementChild;page.classList.add('enter-'+direction);page.addEventListener('animationend',()=>page.classList.remove('enter-'+direction),{once:true})}
+ nextPage.classList.remove('enter-forward','enter-back');
+ if(animated&&direction==='forward'){
+  viewport.classList.add('is-entering');
+  const finish=()=>{if(slideToken!==token)return;enterAnimation?.cancel();enterAnimation=null;if(enterTransitionEnd){viewport.removeEventListener('transitionend',enterTransitionEnd);enterTransitionEnd=null}viewport.classList.remove('is-entering');viewport.style.transition='';viewport.style.transform=''};
+  if(typeof viewport.animate==='function'){
+   enterAnimation=viewport.animate([{transform:'translate3d(100%,0,0)'},{transform:'translate3d(0,0,0)'}],{duration:450,easing:'cubic-bezier(.22,.74,.2,1)',fill:'both'});
+   enterAnimation.onfinish=finish
+  }else{
+   viewport.style.transition='none';viewport.style.transform='translate3d(100%,0,0)';void viewport.offsetWidth;
+   requestAnimationFrame(()=>requestAnimationFrame(()=>{if(slideToken!==token)return;viewport.style.transition='transform .45s cubic-bezier(.22,.74,.2,1)';viewport.style.transform='translate3d(0,0,0)'}));
+   enterTransitionEnd=e=>{if(e.target===viewport&&e.propertyName==='transform')finish()};viewport.addEventListener('transitionend',enterTransitionEnd)
+  }
+  setTimeout(finish,550)
+ }
  updateScrollHeader()
 }
 function openPage(id){scrollOffsets[stack.length-1]=viewport.scrollTop;stack.push(id);scrollOffsets.push(0);history.pushState({stack:[...stack]},'',`#${encodeURIComponent(id)}`);render(false,'forward')}
 function back(){if(stack.length>1){scrollOffsets[stack.length-1]=viewport.scrollTop;history.back()}}
-function showEdit(id){const title=labelFor(id),shell=document.createElement('div');shell.className='sheet-overlay';shell.innerHTML=`<div class="sheet-backdrop" data-close="1"></div><div class="sheet" role="dialog" aria-modal="true" aria-label="${escapeHTML(title)}"><div class="sheet-handle"></div><h2>${escapeHTML(title)}</h2><p>Giá trị này chỉ lưu trên thiết bị của bạn.</p><input type="text" id="sheet-value" placeholder="Nhập ${escapeHTML(title.toLowerCase())}" autocomplete="off" value="${escapeHTML(state[id]||'')}"><button type="button" id="sheet-save">Lưu</button><button type="button" data-close="1">Hủy</button></div>`;document.querySelector('.app').append(shell);shell.querySelector('input').focus();shell.addEventListener('click',e=>{if(e.target.closest('[data-close]'))shell.remove();if(e.target.id==='sheet-save'){state[id]=shell.querySelector('input').value;save();shell.remove();render(true)}})}
+function showEdit(id){
+ const title=labelFor(id),aboutRow=stack.at(-1)==='about'?pages.about.groups.flatMap(g=>g.rows||[]).find(r=>r.id===id):null;
+ const initial=state[id]??aboutRow?.value??aboutRow?.subtitle??'';
+ const shell=document.createElement('div');shell.className='sheet-overlay';
+ shell.innerHTML=`<div class="sheet-backdrop" data-close="1"></div><div class="sheet" role="dialog" aria-modal="true" aria-label="${escapeHTML(title)}"><div class="sheet-handle"></div><h2>${escapeHTML(title)}</h2><p>Giá trị này chỉ lưu trên thiết bị của bạn.</p><input type="text" id="sheet-value" placeholder="Nhập ${escapeHTML(title.toLowerCase())}" autocomplete="off" value="${escapeHTML(initial)}"><button type="button" id="sheet-save">Lưu</button><button type="button" data-close="1">Hủy</button></div>`;
+ document.querySelector('.app').append(shell);shell.querySelector('input').focus();
+ shell.addEventListener('click',e=>{if(e.target.closest('[data-close]'))shell.remove();if(e.target.id==='sheet-save'){state[id]=shell.querySelector('input').value;save();shell.remove();render(true)}})
+}
 function toast(message){document.querySelector('.toast')?.remove();const el=document.createElement('div');el.className='toast';el.textContent=message;document.querySelector('.app').append(el);setTimeout(()=>el.remove(),1600)}
+function setSwitchState(row,on){const id=row.dataset.id,previous=state[id]??findDefault(id),control=row.querySelector('.switch');row.setAttribute('aria-checked',String(on));control?.classList.toggle('on',on);control?.style.setProperty('--thumb-x',on?'20px':'0px');control?.style.setProperty('--liquid-progress',on?'100%':'0%');if(previous===on)return;state[id]=on;save();if(id==='wifi-enabled'||id==='bluetooth-enabled'||id==='cellular-enabled')setTimeout(()=>render(true),650)}
+let switchGesture=null,ignoreSwitchClick=null;
+viewport.addEventListener('pointerdown',e=>{const switchEl=e.target.closest('.switch');if(!switchEl||(e.pointerType==='mouse'&&e.button!==0))return;const row=switchEl.closest('[data-action="toggle"]');if(!row)return;
+ const on=switchEl.classList.contains('on'),travel=Math.max(20,switchEl.getBoundingClientRect().width-31);
+ switchGesture={pointerId:e.pointerId,element:switchEl,row,startX:e.clientX,position:on?travel:0,travel,on,dragged:false};switchEl.style.setProperty('--thumb-x',`${switchGesture.position}px`);switchEl.classList.add('is-dragging','is-active');switchEl.setPointerCapture?.(e.pointerId)
+});
+viewport.addEventListener('pointermove',e=>{const gesture=switchGesture;if(!gesture||e.pointerId!==gesture.pointerId)return;const dx=e.clientX-gesture.startX;if(Math.abs(dx)>5)gesture.dragged=true;if(!gesture.dragged)return;
+ gesture.position=Math.min(gesture.travel,Math.max(0,(gesture.on?gesture.travel:0)+dx));gesture.element.style.setProperty('--thumb-x',`${gesture.position}px`);gesture.element.style.setProperty('--liquid-progress',`${Math.round(gesture.position/gesture.travel*100)}%`);
+ if(gesture.position<=1||gesture.position>=gesture.travel-1)gesture.element.classList.toggle('on',gesture.position>=gesture.travel-1);e.preventDefault()
+});
+function endSwitchGesture(e,cancelled=false){const gesture=switchGesture;if(!gesture||e.pointerId!==gesture.pointerId)return;switchGesture=null;
+ if(gesture.dragged){ignoreSwitchClick=gesture.row;setTimeout(()=>{if(ignoreSwitchClick===gesture.row)ignoreSwitchClick=null},0)}
+ gesture.element.classList.remove('is-dragging','is-active');
+ if(cancelled){gesture.element.classList.toggle('on',gesture.on);gesture.element.style.setProperty('--thumb-x',gesture.on?'20px':'0px');gesture.element.style.setProperty('--liquid-progress',gesture.on?'100%':'0%');return}
+ if(gesture.dragged)setSwitchState(gesture.row,gesture.position>=gesture.travel/2)
+}
+viewport.addEventListener('pointerup',e=>endSwitchGesture(e));viewport.addEventListener('pointercancel',e=>endSwitchGesture(e,true));
 viewport.addEventListener('click',e=>{
   if(e.target.closest('#back'))return back();
   const el=e.target.closest('[data-action]');if(!el)return;
@@ -158,27 +229,38 @@ viewport.addEventListener('click',e=>{
   if(action==='open')return openPage(id);
   if(action==='edit')return showEdit(id);
   if(action==='copy'){navigator.clipboard?.writeText(el.dataset.value).then(()=>toast('Đã sao chép')).catch(()=>toast(el.dataset.value));return}
-  if(action==='toggle'){state[id]=!(state[id]??findDefault(id));save();el.setAttribute('aria-checked',String(state[id]));el.querySelector('.switch')?.classList.toggle('on',state[id]);if(id==='wifi-enabled'||id==='bluetooth-enabled'||id==='cellular-enabled')setTimeout(()=>render(true),280);return}
+  if(action==='toggle'){if(ignoreSwitchClick===el){ignoreSwitchClick=null;return}setSwitchState(el,!(state[id]??findDefault(id)));return}
   if(action==='choice'){state['appearance-light']=id==='appearance-light';state['appearance-dark']=id==='appearance-dark';save();render(true)}
 });
 function findDefault(id){for(const p of Object.values(pages))for(const g of p.groups||[])for(const r of g.rows||[])if(r.id===id)return !!r.default;return false}
-viewport.addEventListener('input',e=>{
- if(e.target.id==='search'){const value=e.target.value; const selection=e.target.selectionStart; const y=viewport.scrollTop;viewport.innerHTML=rootPage(value);viewport.scrollTop=y;const input=document.getElementById('search');input.focus();input.setSelectionRange(selection,selection)}
- if(e.target.dataset.range){state[e.target.dataset.range]=Number(e.target.value);save()}
-});
-function updateScrollHeader(){viewport.firstElementChild?.classList.toggle('scrolled',viewport.scrollTop>75)}
+searchDock.addEventListener('input',e=>{if(e.target.id!=='search')return;const y=viewport.scrollTop;viewport.replaceChildren(makePage('root'));viewport.scrollTop=y;updateScrollHeader()});
+viewport.addEventListener('input',e=>{if(e.target.dataset.range){state[e.target.dataset.range]=Number(e.target.value);save()}});
+function updateScrollHeader(){
+ const page=viewport.firstElementChild;if(!page)return;
+ const y=viewport.scrollTop;page.classList.toggle('scrolled',y>75);
+ if(page.classList.contains('root-page'))page.style.setProperty('--compact-opacity',Math.min(1,Math.max(0,(y-65)/75)).toFixed(3));
+}
 viewport.addEventListener('scroll',updateScrollHeader,{passive:true});
 let edgeGesture=null;
-viewport.addEventListener('touchstart',e=>{if(stack.length>1&&e.touches.length===1&&e.touches[0].clientX<36&&!swipeCompleting)edgeGesture={x:e.touches[0].clientX,y:e.touches[0].clientY,active:false}},{passive:true});
-viewport.addEventListener('touchmove',e=>{if(!edgeGesture)return;const dx=e.touches[0].clientX-edgeGesture.x,dy=e.touches[0].clientY-edgeGesture.y;if(dx>12&&dx>Math.abs(dy)*1.3){
- if(!edgeGesture.active){edgeGesture.active=true;document.querySelector('.outgoing')?.remove();const previous=stack.at(-2),under=document.createElement('div');under.className='swipe-under';const inner=document.createElement('div');inner.className='swipe-under-inner';inner.innerHTML=previous==='root'?rootPage():detailPage(previous);inner.style.transform=`translateY(-${scrollOffsets[stack.length-2]||0}px)`;under.append(inner);document.querySelector('.app').append(under);edgeGesture.under=under}
- const x=Math.min(dx,viewport.clientWidth);viewport.style.transition='none';viewport.style.transform=`translateX(${x}px)`;viewport.style.boxShadow='-18px 0 35px #0008';edgeGesture.under.style.transform=`translateX(${-25+x/viewport.clientWidth*25}%)`;e.preventDefault()
-}},{passive:false});
-viewport.addEventListener('touchend',e=>{if(!edgeGesture)return;const dx=e.changedTouches[0].clientX-edgeGesture.x,gesture=edgeGesture;edgeGesture=null;if(!gesture.active)return;const complete=dx>Math.min(90,viewport.clientWidth*.24);
- viewport.style.transition='transform .26s cubic-bezier(.2,.8,.2,1)';gesture.under.style.transition='transform .26s cubic-bezier(.2,.8,.2,1)';viewport.style.transform=complete?'translateX(100%)':'translateX(0)';gesture.under.style.transform=complete?'translateX(0)':'translateX(-25%)';
- setTimeout(()=>{if(complete){swipeCompleting=true;back()}else{viewport.style.transition='';viewport.style.transform='';viewport.style.boxShadow='';gesture.under.remove()}},260)
+function resetSwipe(){viewport.style.transition='';viewport.style.transform='';viewport.style.boxShadow='';viewport.style.willChange=''}
+function paintSwipe(gesture){gesture.frame=0;if(edgeGesture!==gesture)return;viewport.style.transform=`translate3d(${gesture.progress}px,0,0)`}
+viewport.addEventListener('touchstart',e=>{if(stack.length>1&&e.touches.length===1&&e.touches[0].clientX<36&&!swipeCompleting&&!viewport.classList.contains('is-entering'))edgeGesture={x:e.touches[0].clientX,y:e.touches[0].clientY,width:viewport.clientWidth,started:performance.now(),active:false,frame:0,progress:0}},{passive:true});
+viewport.addEventListener('touchmove',e=>{const gesture=edgeGesture;if(!gesture||e.touches.length!==1)return;const dx=e.touches[0].clientX-gesture.x,dy=e.touches[0].clientY-gesture.y;
+ if(!gesture.active){if(Math.abs(dy)>12&&Math.abs(dy)>Math.abs(dx)){edgeGesture=null;return}if(dx<=12||dx<=Math.abs(dy)*1.3)return;
+  gesture.active=true;document.querySelector('.outgoing')?.remove();const under=document.createElement('div');under.className='swipe-under';under.append(pageCache[stack.length-2]||makePage(stack.at(-2)));document.querySelector('.app').append(under);under.scrollTop=scrollOffsets[stack.length-2]||0;gesture.under=under;
+  viewport.style.transition='none';viewport.style.willChange='transform';viewport.style.boxShadow='-18px 0 35px #0008'
+ }
+ gesture.progress=Math.min(Math.max(dx,0),gesture.width);if(!gesture.frame)gesture.frame=requestAnimationFrame(()=>paintSwipe(gesture));e.preventDefault()
+},{passive:false});
+viewport.addEventListener('touchend',e=>{const gesture=edgeGesture;if(!gesture)return;edgeGesture=null;if(gesture.frame)cancelAnimationFrame(gesture.frame);if(!gesture.active)return;
+ const dx=e.changedTouches[0].clientX-gesture.x,elapsed=Math.max(performance.now()-gesture.started,1),complete=dx>Math.min(90,gesture.width*.24)||(dx>40&&dx/elapsed>.55);
+ const duration=Math.max(160,Math.min(300,(complete?gesture.width-Math.max(dx,0):Math.max(dx,0))*.65));
+ viewport.style.transition=`transform ${duration}ms cubic-bezier(.25,.78,.25,1)`;
+ viewport.style.transform=complete?'translate3d(100%,0,0)':'translate3d(0,0,0)';
+ let settled=false;const finish=()=>{if(settled)return;settled=true;viewport.removeEventListener('transitionend',onEnd);if(complete){swipeCompleting=true;back()}else{resetSwipe();gesture.under.remove()}};
+ const onEnd=e=>{if(e.target===viewport&&e.propertyName==='transform')finish()};viewport.addEventListener('transitionend',onEnd);setTimeout(finish,duration+55)
 },{passive:true});
-viewport.addEventListener('touchcancel',()=>{edgeGesture?.under?.remove();edgeGesture=null;viewport.style.transition='';viewport.style.transform='';viewport.style.boxShadow=''},{passive:true});
-window.addEventListener('popstate',e=>{const previousLength=stack.length,wasSwipe=swipeCompleting;swipeCompleting=false;stack=e.state?.stack||['root'];if(stack.length<previousLength)scrollOffsets.length=stack.length;while(scrollOffsets.length<stack.length)scrollOffsets.push(0);viewport.style.transition='';viewport.style.transform='';viewport.style.boxShadow='';document.querySelector('.swipe-under')?.remove();render(false,wasSwipe?'':stack.length<previousLength?'back':'forward');viewport.scrollTop=scrollOffsets[stack.length-1]||0;updateScrollHeader()});
+viewport.addEventListener('touchcancel',()=>{if(edgeGesture?.frame)cancelAnimationFrame(edgeGesture.frame);edgeGesture?.under?.remove();edgeGesture=null;resetSwipe()},{passive:true});
+window.addEventListener('popstate',e=>{const previousLength=stack.length,wasSwipe=swipeCompleting;swipeCompleting=false;stack=[...(e.state?.stack||['root'])];if(stack.length<previousLength)scrollOffsets.length=stack.length;while(scrollOffsets.length<stack.length)scrollOffsets.push(0);resetSwipe();render(false,wasSwipe?'back-swipe':stack.length<previousLength?'back':'forward');document.querySelector('.swipe-under')?.remove();updateScrollHeader()});
 history.replaceState({stack:['root']},'',location.pathname+location.search);render();
 if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));

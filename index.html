@@ -9,14 +9,21 @@
   <meta name="apple-mobile-web-app-title" content="Cài đặt">
   <meta name="application-name" content="Cài đặt">
   <link rel="manifest" href="./manifest.webmanifest">
-  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png">
-  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/apple-touch-icon.png?v=27">
+  <link rel="icon" href="./icons/icon-192.png?v=27">
   <link rel="stylesheet" href="./style.css">
   <title>Cài đặt</title>
 </head>
 <body>
+  <svg aria-hidden="true" width="0" height="0" style="position:absolute;overflow:hidden;pointer-events:none">
+    <defs>
+      <filter id="settings-switch-goo"><feGaussianBlur in="SourceGraphic" stdDeviation="3.5" result="blur"/><feColorMatrix in="blur" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 13 -10"/></filter>
+      <filter id="settings-switch-cutout" color-interpolation-filters="sRGB"><feColorMatrix in="SourceGraphic" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 -255 -255 -255 0 1" result="black-pixels"/><feMorphology in="black-pixels" operator="dilate" radius="0.4" result="smoothed"/><feComposite in="SourceGraphic" in2="smoothed" operator="out"/></filter>
+    </defs>
+  </svg>
   <div id="app" class="app">
     <main id="viewport" class="viewport"></main>
+    <div id="search-dock" class="search-wrap search-dock"></div>
   </div>
   <script src="./app.js" defer></script>
 </body>

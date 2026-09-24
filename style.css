@@ -5,10 +5,10 @@ body.dark{color-scheme:dark;--bg:#000;--card:#1c1c1e;--text:#fff;--muted:#98989f
 /* iOS 26 inspired layout based on the supplied screenshots. No simulated status bar. */
 :root{color-scheme:dark;--bg:#000;--card:#1c1c1e;--text:#f5f5f7;--muted:#98989f;--line:#3a3a3c;--blue:#0a84ff;--switch:#30c85a;--glass:rgba(0,0,0,.83)}
 .app{background:var(--bg);color:var(--text)}.viewport{height:100%;padding-bottom:0}.page{padding-bottom:90px}.large-title{font-size:34px;margin:0;padding:27px 20px 17px;letter-spacing:-.9px}.group{margin:0 16px 35px}.rows{border-radius:26px;background:var(--card)}.row{min-height:55px;background:var(--card)}.row-main{min-height:55px;padding:10px 0;font-size:17px;letter-spacing:-.4px}.row+.row:before{left:59px;right:16px;height:1px;opacity:1}.row.plain:before,.row.plain+.row.plain:before{left:16px}.row.plain .row-main{padding-left:16px}.icon{width:30px;height:30px;border-radius:8px;margin-left:16px;margin-right:13px}.icon svg{width:20px;height:20px}.row-trailing{color:#96969e}.chevron{border-color:#66666b;margin-right:18px}.switch{background:#626269}.switch.on{background:#30c85a}.row:active{background:#2b2b2e}.group-title{margin-bottom:8px;font-size:13px}.group-footer{line-height:1.45;margin:9px 15px 0}.footer-note{color:#5c5c61;padding-bottom:30px}
-.root-page{padding-bottom:83px}.root-page .search-wrap{position:absolute;bottom:8px;left:0;right:0;z-index:6;padding:10px 21px 13px;background:linear-gradient(transparent,#000 35%);pointer-events:none}.root-page .search{height:49px;border:1px solid #5a5a5e;background:rgba(44,44,47,.88);border-radius:25px;box-shadow:inset 0 1px 2px #fff2;backdrop-filter:blur(15px);-webkit-backdrop-filter:blur(15px);pointer-events:auto}.root-page .search svg{width:21px;height:21px}.root-page .search input{font-size:17px;color:#fff}.root-page .search input::placeholder{color:#aaaab0}.root-page .group:first-of-type{margin-bottom:35px}.account-card .profile{min-height:85px;padding:8px 15px;gap:10px}.avatar{width:54px;height:54px;background:linear-gradient(140deg,#857237,#3d592b);font-size:20px;font-weight:700;border:2px solid #535353}.profile-name{font-size:19px;font-weight:600}.profile-sub{font-size:13px;margin-top:4px}.account-card .row.plain:before{left:88px}.account-card .row.plain .row-main{padding-left:16px}.account-card .row.plain .row-trailing{font-size:22px;color:#ff454b}.root-page .group:nth-of-type(2) .row .row-main{padding-left:16px}.root-page .group:nth-of-type(2) .row .row-trailing{color:#ff454b;font-size:22px}
+.root-page{padding-bottom:83px}.root-page .group:first-of-type{margin-bottom:35px}.account-card .profile{min-height:85px;padding:8px 15px;gap:10px}.avatar{width:54px;height:54px;background:linear-gradient(140deg,#857237,#3d592b);font-size:20px;font-weight:700;border:2px solid #535353}.profile-name{font-size:19px;font-weight:600}.profile-sub{font-size:13px;margin-top:4px}.account-card .row.plain:before{left:88px}.account-card .row.plain .row-main{padding-left:16px}.account-card .row.plain .row-trailing{font-size:22px;color:#ff454b}.root-page .group:nth-of-type(2) .row .row-main{padding-left:16px}.root-page .group:nth-of-type(2) .row .row-trailing{color:#ff454b;font-size:22px}
 .detail-page{padding-top:0;padding-bottom:58px}.detail-nav{height:62px;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;font-weight:600;font-size:16px}.detail-nav .back{height:42px;width:42px;max-width:none;top:8px;left:16px;border-radius:50%;border:1px solid #3b3b3d;background:#202022;display:grid;place-items:center;color:#fff;padding:0}.detail-nav .back:before{border-color:#fff;width:10px;height:10px;transform:rotate(45deg);margin-left:5px}.detail-nav .back span{display:none}.detail-title{font-size:34px;margin:21px 20px 29px}.detail-page .group{margin-bottom:33px}.detail-page .row{min-height:55px}.detail-page .rows{border-radius:24px}.hero-card{background:#1c1c1e;border-radius:27px;padding:17px 20px 19px;margin:16px 16px 36px}.hero-icon{width:60px;height:60px;border-radius:16px;display:grid;place-items:center;color:white;box-shadow:inset 0 1px 1px #fff6}.hero-icon svg{width:38px;height:38px;stroke:currentColor;fill:none;stroke-width:2.7;stroke-linecap:round;stroke-linejoin:round}.hero-card h1{font-size:24px;margin:17px 0 5px;letter-spacing:-.4px}.hero-card p{font-size:16px;line-height:1.35;color:#99999e;margin:0}.hero-card p span{color:#0a84ff;white-space:nowrap}.inline-section-title{font-size:13px;font-weight:500;text-transform:uppercase;color:#99999e;margin:0 32px 8px}.apple-head{text-align:center;margin:32px 16px 26px}.apple-head .avatar{width:75px;height:75px;margin:auto;font-size:28px}.apple-head h1{font-size:20px;margin:12px 0 3px}.apple-head p{font-size:13px;color:#99999e;margin:0}.apple-head+.detail-title{display:none}.battery-summary{background:#1c1c1e;border-radius:25px;margin:18px 16px 32px;padding:16px}.battery-percent{font-size:27px;font-weight:700}.battery-percent span{font-size:15px}.battery-sub{font-size:12px;color:#aaa}.battery-track{height:4px;background:#555;border-radius:4px;margin-top:12px}.battery-track span{display:block;width:40%;height:4px;border-radius:4px;background:#fff}.battery-chart{height:125px;margin:0 28px 28px;display:flex;align-items:end;justify-content:space-around;border-bottom:1px solid #444;padding-bottom:12px}.battery-chart i{width:19px;background:#555;border-radius:2px}.center-detail{padding-top:42px}.hero-glyph{background:#8e8e93}
-body.light{color-scheme:light;--bg:#f2f2f7;--card:#fff;--text:#000;--muted:#8e8e93;--line:#d1d1d6;--glass:rgba(242,242,247,.84)}body.light .root-page .search-wrap{background:linear-gradient(transparent,#f2f2f7 35%)}body.light .root-page .search{background:rgba(230,230,235,.9);border-color:#ccc}body.light .root-page .search input{color:#000}body.light .detail-nav .back{background:#ddd;border-color:#bbb}body.light .detail-nav .back:before{border-color:#222}body.light .hero-card{background:#fff}body.light .battery-summary{background:#fff}
-@media(min-width:600px){.app{border-color:#151517}.root-page .search-wrap{left:auto;right:auto;width:100%}}
+body.light{color-scheme:light;--bg:#f2f2f7;--card:#fff;--text:#000;--muted:#8e8e93;--line:#d1d1d6;--glass:rgba(242,242,247,.84)}body.light .detail-nav .back{background:#ddd;border-color:#bbb}body.light .detail-nav .back:before{border-color:#222}body.light .hero-card{background:#fff}body.light .battery-summary{background:#fff}
+@media(min-width:600px){.app{border-color:#151517}}
 /* Type, symbols, data density, and motion tuned to the supplied iOS captures. */
 html{-webkit-text-size-adjust:100%}body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif;font-synthesis:none}.app{isolation:isolate}.page{will-change:transform,opacity}.enter-forward{animation:pushIn .38s cubic-bezier(.18,.7,.18,1) both}.enter-back{animation:popIn .36s cubic-bezier(.18,.7,.18,1) both}@keyframes pushIn{from{transform:translate3d(32%,0,0);opacity:.78}to{transform:translate3d(0,0,0);opacity:1}}@keyframes popIn{from{transform:translate3d(-25%,0,0);opacity:.78}to{transform:translate3d(0,0,0);opacity:1}}
 .detail-nav{transition:background .28s,backdrop-filter .28s;-webkit-transition:background .28s,-webkit-backdrop-filter .28s}.scrolled .detail-nav{background:rgba(0,0,0,.79);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px)}.compact-header{position:absolute;z-index:5;top:0;left:0;right:0;height:52px;display:flex;justify-content:center;align-items:center;font-weight:600;font-size:17px;pointer-events:none;background:rgba(0,0,0,0);opacity:0;transform:translateY(-4px);transition:opacity .23s,transform .23s,background .23s}.scrolled .compact-header{position:sticky;opacity:1;transform:none;background:rgba(0,0,0,.74);backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);margin-bottom:-52px}.row{transition:background-color .16s ease}.row:active{background:#343438}.switch{transition:background-color .22s cubic-bezier(.2,.8,.2,1)}.switch:after{transition:transform .26s cubic-bezier(.18,1.35,.25,1)}.row .chevron{transition:transform .2s}.row:active .chevron{transform:translateX(2px) rotate(45deg)}
@@ -21,10 +21,147 @@ html{-webkit-text-size-adjust:100%}body{font-family:-apple-system,BlinkMacSystem
 /* Safari resolves -apple-system to the iPhone's native San Francisco font. */
 html,body,button,input{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Helvetica Neue",sans-serif}
 .icon.native-icon{width:29px;height:29px;flex:none;border-radius:7px;background-repeat:no-repeat;background-color:transparent;box-shadow:none}.hero-icon.native-hero{width:60px;height:60px;box-shadow:none;background-repeat:no-repeat;background-color:transparent}.avatar.native-avatar{background-image:url('./assets/sprites/avatar.png');background-size:100% 100%;background-position:center;background-repeat:no-repeat;background-color:#222;border:0;box-shadow:none}.app-mark.native-app{background-repeat:no-repeat;background-color:transparent;border-radius:8px}
-.swipe-under{position:absolute;inset:0;z-index:1;background:var(--bg);overflow:hidden;transform:translateX(-25%);pointer-events:none}.swipe-under-inner{position:absolute;inset:0}.viewport{touch-action:pan-y}
+.swipe-under{position:absolute;inset:0;z-index:1;background:var(--bg);overflow:hidden;pointer-events:none}.swipe-under-inner{position:absolute;inset:0}.viewport{touch-action:pan-y}
 /* Reserve the real iPhone status area without drawing a simulated status bar. */
 .viewport{padding-top:env(safe-area-inset-top)}
 .root-page .large-title{padding-top:57px}
 .detail-nav,.compact-header{top:env(safe-area-inset-top)}
 .root-page{padding-bottom:calc(83px + env(safe-area-inset-bottom))}
-.root-page .search-wrap{bottom:calc(8px + env(safe-area-inset-bottom))}
+/* Keep the 13 px native gap between a 29 px icon and its row label. */
+.row-main>.icon{margin-right:5px}
+/* Only the moving pages are composited; long settings lists stay in normal flow. */
+.page{will-change:auto}
+.enter-forward,.enter-back,.outgoing{will-change:transform}
+.page{background:var(--bg)}
+.enter-forward{animation:settingsPushIn .28s cubic-bezier(.25,.78,.25,1) both}
+.enter-back{animation:none}
+.outgoing.leave-forward{animation:none}
+.outgoing.leave-back{animation:settingsPopAway .28s cubic-bezier(.25,.78,.25,1) both}
+@keyframes settingsPushIn{from{transform:translate3d(100%,0,0)}to{transform:translate3d(0,0,0)}}
+@keyframes settingsPopAway{from{transform:translate3d(0,0,0)}to{transform:translate3d(100%,0,0)}}
+.outgoing,.swipe-under{padding-top:env(safe-area-inset-top)}
+.outgoing-inner,.swipe-under-inner{right:0}
+.icon.native-icon{display:block;object-fit:fill}
+.icon.intelligence-reference{background-image:url('./assets/apple-intelligence-reference.png');background-size:402px 874px;background-position:-29.667px -271.667px;background-repeat:no-repeat;background-color:transparent}
+.root-page .group:nth-of-type(2) .row .row-main{padding-left:0}
+.root-page .group:nth-of-type(2) .row .row-trailing{color:var(--muted);font-size:16px}
+@media(prefers-reduced-motion:reduce){.enter-forward,.enter-back,.outgoing{animation:none!important}}
+/* Solid iOS-style controls; the search stays attached to the app frame. */
+.search-dock{position:absolute;left:0;right:0;bottom:calc(8px + env(safe-area-inset-bottom));z-index:6;padding:10px 21px 13px;background:transparent;pointer-events:none}
+.search-dock[hidden]{display:none}
+.search-dock .search{height:49px;border:1px solid rgba(255,255,255,.25);border-radius:25px;background:#303034;box-shadow:inset 0 1px 1px #fff2,0 4px 14px #0004;pointer-events:auto;transition:border-color .2s,background-color .2s}
+.search-dock .search svg{width:21px;height:21px}.search-dock .search input{font-size:17px;color:#fff}.search-dock .search input::placeholder{color:#aaaab0}
+.search-dock .search:focus-within{border-color:rgba(255,255,255,.5)}
+body.light .search-dock .search{background:#e9e9ed;border-color:#d2d2d7;color:#8e8e93}
+body.light .search-dock .search input{color:#000}body.light .search-dock .search input::placeholder{color:#73737b}
+.switch,body.dark .switch{--thumb-x:0px;background:#626269;border:0;box-shadow:none;touch-action:pan-y;transition:background-color .2s ease}
+.switch.on,body.dark .switch.on{--thumb-x:20px;background:#30c85a}
+.switch:after,.switch.on:after,body.dark .switch:after,body.dark .switch.on:after{top:2px;left:2px;width:27px;height:27px;border:0;background:#fff;box-shadow:0 1px 3px #0004;transform:translate3d(var(--thumb-x),0,0);transition:transform .25s cubic-bezier(.2,.8,.2,1)}
+.switch.is-dragging:after{transition:none}
+.row:active .switch:after,.row:active .switch.on:after{transform:translate3d(var(--thumb-x),0,0)}
+body.light .switch{background:#e9e9ea}body.light .switch.on{background:#34c759}
+@media(prefers-reduced-motion:reduce){.switch,.switch:after{transition:none!important}}
+/* Match the supplied iPhone captures with the system San Francisco type scale. */
+.large-title,.detail-title{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;letter-spacing:-.75px}
+.row-main{font-size:17px;line-height:1.22;letter-spacing:-.25px}
+.row-trailing,.root-page .group:nth-of-type(2) .row .row-trailing{font-size:17px;letter-spacing:-.2px}
+.profile-sub{font-size:14px;line-height:1.25}
+.detail-nav{font-size:17px}
+.detail-nav,.scrolled .detail-nav,.scrolled .compact-header{backdrop-filter:none;-webkit-backdrop-filter:none}
+.scrolled .detail-nav,.scrolled .compact-header{background:#000}
+body.light .scrolled .detail-nav,body.light .scrolled .compact-header{background:#f2f2f7}
+/* Move the whole scroll viewport as one opaque panel; keep the previous page stationary beneath it. */
+.outgoing,.swipe-under{overflow:auto;scrollbar-width:none;overscroll-behavior:contain}
+.outgoing::-webkit-scrollbar,.swipe-under::-webkit-scrollbar{display:none}
+.viewport.is-entering{background:var(--bg);box-shadow:-12px 0 25px #0005;will-change:transform}
+.outgoing.leave-back{animation:settingsPopAway .34s cubic-bezier(.22,.74,.2,1) both}
+@media(prefers-reduced-motion:reduce){.viewport.is-entering{transition:transform .45s cubic-bezier(.22,.74,.2,1)!important}}
+/* The Apple Account, Bluetooth and About screens follow the supplied 440-point iPhone captures. */
+.apple-page,.bluetooth-page,.about-page{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif}
+.apple-page .detail-nav,.bluetooth-page .detail-nav,.about-page .detail-nav{font-size:17px}
+.apple-page .row,.bluetooth-page .row,.about-page .row{min-height:60px}
+.apple-page .row-main,.bluetooth-page .row-main,.about-page .row-main{min-height:60px;font-size:17px;letter-spacing:-.3px}
+.apple-page .row-trailing,.bluetooth-page .row-trailing,.about-page .row-trailing{font-size:17px}
+.apple-page .row.two-line,.apple-page .row.two-line .row-main,.about-page .row.two-line,.about-page .row.two-line .row-main{min-height:72px}
+.apple-page .icon{width:30px;height:30px}
+.apple-page .group,.about-page .group{margin-bottom:39px}
+.apple-page .apple-head{margin:28px 16px 43px;text-align:center}
+.apple-page .account-initials{width:110px;height:110px;margin:auto;border:0;background:linear-gradient(145deg,#a6c5e1,#687bb5);font-size:48px;font-weight:600;letter-spacing:-1.8px}
+.apple-page .apple-head h1{font-size:30px;line-height:1.14;font-weight:700;letter-spacing:-.8px;margin:17px 0 5px}
+.apple-page .apple-head p{font-size:18px;line-height:1.3;color:#aaaab1}
+.apple-page .row[data-id="family"] .icon,.apple-page .row[data-id="find"] .icon,.apple-page .row[data-id="sign-in-apple"] .icon{background:#f7f7fa!important}
+.apple-page .row[data-id="family"] .icon svg,.apple-page .row[data-id="find"] .icon svg{width:24px;height:24px}
+.apple-page .row[data-id="sign-in-apple"] .icon svg{width:21px;height:21px}
+.apple-page .row[data-id="purchases"] .icon{background:linear-gradient(#36c0f8,#0a72d9)!important}
+.apple-page .row[data-id="windows"] .icon{background:none!important}
+.apple-page .row[data-id="windows"] .icon svg{width:30px;height:30px}
+.apple-page .row[data-id="this-iphone"] .icon,.apple-page .row[data-id="other-iphone"] .icon,.apple-page .row[data-id="third-iphone"] .icon{height:36px;width:23px;margin-left:19px;margin-right:16px;border-radius:4px;background:linear-gradient(135deg,#111d40 8%,#2789c1 45%,#91d0ff 65%,#171836 95%)!important;box-shadow:inset 0 0 0 1px #666}
+.apple-page .row[data-id="this-iphone"] .icon svg,.apple-page .row[data-id="other-iphone"] .icon svg,.apple-page .row[data-id="third-iphone"] .icon svg{width:22px;height:34px;stroke:#a4b6cc}
+.apple-page .row[data-id="contact-key"] .icon{background:linear-gradient(#c0c0c6,#81818b)!important}
+.apple-page .row[data-id="signout"] .row-main{justify-content:center;padding-left:0}
+.apple-page .row[data-id="signout"] .row-label{flex:none;color:#ff453a}
+.apple-page .row[data-id="signout"] .chevron{display:none}
+.apple-page .row-label small{font-size:15px;margin-top:3px}
+.about-page .group:first-of-type{margin-top:25px}
+.about-page .group-title{font-size:16px;font-weight:600;text-transform:none;margin:0 16px 7px;color:#99999f}
+.about-page .rows,.about-page .row,.about-page .row-main{min-width:0;max-width:100%}
+.about-page .row-main{width:100%;padding-right:16px}
+.about-page .row-label{flex:1 1 0;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.about-page .row-trailing{flex:0 1 auto;min-width:0;max-width:calc(100% - 55px);white-space:normal;overflow-wrap:anywhere;text-overflow:clip;text-align:right}
+.about-page .row .chevron{margin-right:2px;margin-left:4px}
+.about-page .row[data-id="eid"] .row-trailing{display:none}
+.about-page .row[data-id="eid"] .row-label{overflow:visible;white-space:normal}
+.about-page .row[data-id="eid"] .row-label small{font-size:16px;white-space:normal;overflow-wrap:anywhere;line-height:1.3;letter-spacing:-.35px}
+.about-page .row[data-id="eid"],.about-page .row[data-id="eid"] .row-main{min-height:78px}
+.bluetooth-page .detail-nav>span{opacity:0;transition:opacity .15s}
+.bluetooth-page.scrolled .detail-nav>span{opacity:1}
+.bluetooth-hero{margin:25px 16px 0;background:var(--card);border-radius:27px;padding:18px 17px 0;overflow:hidden}
+.bluetooth-hero .hero-icon{height:66px;width:66px;border-radius:17px}
+.bluetooth-hero h1{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display",sans-serif;font-size:24px;line-height:1.2;letter-spacing:-.5px;margin:17px 0 7px}
+.bluetooth-hero p{font-size:17px;color:var(--muted);line-height:1.4;letter-spacing:-.18px;margin:0}
+.bluetooth-hero .learn-more{color:var(--blue);margin:0 0 15px}
+.bluetooth-hero-toggle{border-top:1px solid #3a3a3d;margin-left:0;margin-right:0}
+.bluetooth-hero-toggle .row{background:transparent}
+.bluetooth-hero-toggle .row-main{padding-left:0}
+.bluetooth-hero-toggle .row .switch{margin-right:0}
+.bluetooth-footnote{font-size:14px;line-height:1.45;color:#99999f;margin:9px 32px 19px}
+.bluetooth-heading{font-size:16px;font-weight:600;color:#99999f;margin:0 32px 8px}
+.bluetooth-page .bluetooth-list{margin-bottom:31px}
+.bluetooth-device .row-main{padding-left:16px}
+.bluetooth-device .row-trailing{max-width:42%;margin-left:5px}
+.bluetooth-info{border:1.5px solid #0a84ff;color:#0a84ff;width:23px;height:23px;display:grid;place-items:center;border-radius:50%;font:600 17px/1 Georgia,serif;flex:none;margin-right:16px}
+.bluetooth-device+.bluetooth-device:before{left:16px}
+.bluetooth-spinner{display:inline-block;width:17px;height:17px;border:3px dotted #666;border-radius:50%;vertical-align:-3px;margin-left:5px}
+.bluetooth-footer{margin-top:18px}
+.bluetooth-footer span{color:var(--blue)}
+/* A soft material fade behind the compact title, without a rectangular edge. */
+.root-page .compact-header,.root-page.scrolled .compact-header{position:sticky;margin-bottom:-52px;isolation:isolate;background:transparent;backdrop-filter:none;-webkit-backdrop-filter:none;opacity:var(--compact-opacity,0);transform:none;transition:none}
+.root-page .compact-header::before{content:"";position:absolute;inset:-12px 0 -38px;z-index:-1;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,0,.94),rgba(0,0,0,.77) 42%,rgba(0,0,0,.38) 76%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);mask-image:linear-gradient(to bottom,#000 0%,#000 42%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 42%,transparent 100%)}
+body.light .root-page .compact-header,body.light .root-page.scrolled .compact-header{background:transparent}
+body.light .root-page .compact-header::before{background:linear-gradient(to bottom,rgba(242,242,247,.96),rgba(242,242,247,.76) 42%,rgba(242,242,247,.38) 76%,transparent)}
+/* Adapt the supplied Framer liquid toggle's indicator, cutout, goo and glass orb to iOS row dimensions. */
+.switch.liquid-switch,body.dark .switch.liquid-switch,body.light .switch.liquid-switch{--liquid-progress:0%;--thumb-x:0px;--liquid-color:color-mix(in srgb,#30c85a var(--liquid-progress),#626269);width:51px;height:31px;flex:none;position:relative;border:0;border-radius:100px;background:transparent;box-shadow:none;isolation:isolate;overflow:visible;touch-action:pan-y}
+.switch.liquid-switch::after,.switch.liquid-switch.on::after,.row:active .switch.liquid-switch::after{content:none!important}
+.liquid-switch>span,.liquid-switch .lt-liquids>span,.liquid-switch .lt-knob>span{pointer-events:none}
+.liquid-switch .lt-indicator,.liquid-switch .lt-indicator--masked{position:absolute;inset:0;border-radius:100px;background:var(--liquid-color)}
+.liquid-switch .lt-indicator{box-shadow:inset 0 1px 1px #fff3,inset 0 -1px 2px #0003}
+.liquid-switch .lt-knockout{position:absolute;inset:0;border-radius:100px;filter:url(#settings-switch-cutout);transform:translateZ(0)}
+.liquid-switch .lt-indicator--masked{z-index:2}
+.liquid-switch .lt-mask{position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:100px;background:#000;transform:translate3d(var(--thumb-x),0,0);transition:transform .52s cubic-bezier(.18,.82,.2,1),scale .25s}
+.liquid-switch .lt-wrapper{position:absolute;inset:0;border-radius:100px;clip-path:inset(0 round 100px);filter:blur(2px);transition:filter .2s}
+.liquid-switch .lt-liquids{position:absolute;inset:0;border-radius:100px;overflow:hidden;filter:url(#settings-switch-goo);transform:translateZ(0)}
+.liquid-switch .lt-liquid__shadow{position:absolute;inset:0;border-radius:100px;box-shadow:inset 0 0 2px 3px var(--liquid-color)}
+.liquid-switch .lt-liquid__track{position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:100px;background:var(--liquid-color);transform:translate3d(var(--thumb-x),0,0);transition:transform .52s cubic-bezier(.18,.82,.2,1)}
+.liquid-switch .lt-knob{position:absolute;top:2px;left:2px;width:27px;height:27px;border-radius:100px;transform:translate3d(var(--thumb-x),0,0);transition:transform .52s cubic-bezier(.18,.82,.2,1);z-index:3}
+.liquid-switch .lt-knob__shadow,.liquid-switch .lt-knob__cover{position:absolute;inset:0;border-radius:100px;transition:opacity .2s ease}
+.liquid-switch .lt-knob__shadow{opacity:0;box-shadow:1px -1px 2px #fff8 inset,-1px -1px 2px #fff8 inset,1px 1px 2px #5558 inset,-5px 3px 8px -5px #5557 inset,-1px 1px 5px #5555 inset,-1px -1px 6px #9993,2px 3px 10px -4px #3338}
+.liquid-switch .lt-knob__cover{background:#fff;box-shadow:0 1px 3px #0005,inset 0 1px 1px #fff}
+.liquid-switch.is-active .lt-mask,.row:active .liquid-switch .lt-mask{scale:1.45 1.32}
+.liquid-switch.is-active .lt-knob,.row:active .liquid-switch .lt-knob{transform:translate3d(var(--thumb-x),0,0) scale(1.45,1.32)}
+.liquid-switch.is-active .lt-wrapper,.row:active .liquid-switch .lt-wrapper{filter:blur(0)}
+.liquid-switch.is-active .lt-knob__shadow,.row:active .liquid-switch .lt-knob__shadow{opacity:1}
+.liquid-switch.is-active .lt-knob__cover,.row:active .liquid-switch .lt-knob__cover{opacity:0}
+.liquid-switch.is-dragging .lt-mask,.liquid-switch.is-dragging .lt-liquid__track,.liquid-switch.is-dragging .lt-knob{transition:none}
+body.light .switch.liquid-switch{--liquid-color:color-mix(in srgb,#34c759 var(--liquid-progress),#e9e9ea)}
+@supports(transition-timing-function:linear(0,1)){.liquid-switch .lt-mask,.liquid-switch .lt-liquid__track,.liquid-switch .lt-knob{transition-timing-function:linear(0 0%,.6091 3.69%,1.0259 7.24%,1.1733 9.05%,1.283 10.92%,1.3562 12.87%,1.3948 14.95%,1.4014 16.03%,1.3999 17.16%,1.3731 19.64%,1.3202 22.27%,1.1394 29.39%,1.0582 33.17%,.9943 37.45%,.9734 39.64%,.9593 41.92%,.9505 45.08%,.9517 48.7%,.9924 63.02%,1.0046 71.2%,1.0061 78.24%,1 100%);transition-duration:.6s}}
+@media(prefers-reduced-motion:reduce){.liquid-switch .lt-mask,.liquid-switch .lt-liquid__track,.liquid-switch .lt-knob,.liquid-switch .lt-wrapper,.liquid-switch .lt-knob__shadow,.liquid-switch .lt-knob__cover{transition:none!important}}
