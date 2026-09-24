@@ -106,6 +106,11 @@ let stack=['root'];let scrollOffsets=[0],swipeCompleting=false; const viewport=d
 const searchDock=document.getElementById('search-dock');
 searchDock.innerHTML=`<label class="search">${icon('search')}<input id="search" type="search" placeholder="Tìm kiếm" autocomplete="off" aria-label="Tìm kiếm cài đặt"></label>`;
 const escapeHTML=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const accountName=()=>state.accountName||'quan chuy dio';
+const accountDisplayName=()=>state.accountDisplayName||'Đỗ Viết Mạnh';
+const accountEmail=()=>state.accountEmail||'dovietmanh2006@gmail.com';
+const accountAvatar=()=>/^data:image\/(?:jpeg|png|webp);base64,[A-Za-z0-9+/=]+$/.test(state.accountAvatar||'')?state.accountAvatar:'';
+const avatarMarkup=className=>accountAvatar()?`<img class="avatar ${className}" src="${accountAvatar()}" alt="" draggable="false">`:`<span class="avatar ${className}">${className==='account-initials'?'DM':''}</span>`;
 function liquidSwitch(on){return `<span class="switch liquid-switch ${on?'on':''}" style="--thumb-x:${on?'20px':'0px'};--liquid-progress:${on?'100%':'0%'}" aria-hidden="true"><span class="lt-indicator"></span><span class="lt-knockout"><span class="lt-indicator--masked"><span class="lt-mask"></span></span></span><span class="lt-wrapper"><span class="lt-liquids"><span class="lt-liquid__shadow"></span><span class="lt-liquid__track"></span></span></span><span class="lt-knob"><span class="lt-knob__shadow"></span><span class="lt-knob__cover"></span></span></span>`}
 function row(data,mode='detail'){
   const isToggle=data.type==='toggle', isChoice=data.type==='choice';
@@ -124,7 +129,7 @@ function rootPage(query=''){
     const q=query.toLocaleLowerCase('vi').trim(); const matches=rootGroups.flat().filter(x=>x.label.toLocaleLowerCase('vi').includes(q));
     return `<div class="page root-page"><div class="compact-header">Cài đặt</div><h1 class="large-title">Cài đặt</h1><section class="group search-results"><div class="rows">${matches.map(x=>row(x)).join('')||'<div class="empty">Không tìm thấy kết quả</div>'}</div></section></div>`;
   }
-  return `<div class="page root-page"><div class="compact-header">Cài đặt</div><h1 class="large-title">Cài đặt</h1><section class="group"><div class="rows account-card"><button class="row profile" data-id="apple" data-action="open"><span class="avatar native-avatar"></span><span><span class="profile-name">quan chuy dio</span><br><span class="profile-sub">Tài khoản Apple, iCloud, v.v.</span></span><span class="chevron"></span></button></div></section>${rootGroups.map(g=>group({rows:g})).join('')}<div class="footer-note">Giao diện mô phỏng</div></div>`;
+  return `<div class="page root-page"><div class="compact-header">Cài đặt</div><h1 class="large-title">Cài đặt</h1><section class="group"><div class="rows account-card"><button class="row profile" data-id="apple" data-action="open" aria-label="Tài khoản Apple; nhấn giữ để sửa hồ sơ">${avatarMarkup('native-avatar')}<span><span class="profile-name">${escapeHTML(accountName())}</span><br><span class="profile-sub">Tài khoản Apple, iCloud, v.v.</span></span><span class="chevron"></span></button></div></section>${rootGroups.map(g=>group({rows:g})).join('')}<div class="footer-note">Giao diện mô phỏng</div></div>`;
 }
 const heroData={
  wifi:['wifi','#0a84ff','Wi-Fi','Kết nối vào Wi-Fi, xem các mạng khả dụng, cũng như quản lý cài đặt để kết nối mạng và điểm truy cập ở gần.'],
@@ -149,7 +154,7 @@ function detailPage(id){
  const config=pages[id]||{title:labelFor(id),groups:[{rows:[R('Thông tin','info-'+id,{value:'Mô phỏng'})]}]};
  const nav=`<nav class="detail-nav"><button class="back" id="back" aria-label="Quay lại"></button><span>${escapeHTML(config.title)}</span></nav>`;
  if(config.special==='update')return `<div class="page detail-page">${nav}<div class="center-detail"><div class="hero-glyph">${icon('update')}</div><h2>iOS 26</h2><p>Trang này chỉ mô phỏng giao diện.</p></div></div>`;
- return `<div class="page detail-page ${id==='apple'?'apple-page':id==='bluetooth'?'bluetooth-page':id==='about'?'about-page':''}">${nav}${id==='apple'?`<div class="apple-head"><span class="avatar account-initials">DM</span><h1>Đỗ Viết Mạnh</h1><p>dovietmanh2006@gmail.com</p></div>`:''}${detailContent(id,config)}</div>`;
+ return `<div class="page detail-page ${id==='apple'?'apple-page':id==='bluetooth'?'bluetooth-page':id==='about'?'about-page':''}">${nav}${id==='apple'?`<div class="apple-head" aria-label="Nhấn giữ để sửa hồ sơ">${avatarMarkup('account-initials')}<h1>${escapeHTML(accountDisplayName())}</h1><p>${escapeHTML(accountEmail())}</p></div>`:''}${detailContent(id,config)}</div>`;
 }
 function labelFor(id){const all=[...rootGroups.flat(),...Object.values(pages).flatMap(p=>p.groups?.flatMap(g=>g.rows||[])||[])];return all.find(x=>x.id===id)?.label||id.replace(/^app-/,'')}
 const pageCache=[];
@@ -204,8 +209,49 @@ function showEdit(id){
  document.querySelector('.app').append(shell);shell.querySelector('input').focus();
  shell.addEventListener('click',e=>{if(e.target.closest('[data-close]'))shell.remove();if(e.target.id==='sheet-save'){state[id]=shell.querySelector('input').value;save();shell.remove();render(true)}})
 }
+function showAccountEdit(){
+ if(document.querySelector('.sheet-overlay'))return;
+ const shell=document.createElement('div');shell.className='sheet-overlay';
+ shell.innerHTML=`<div class="sheet-backdrop" data-close="1"></div><div class="sheet account-sheet" role="dialog" aria-modal="true" aria-label="Sửa tài khoản Apple"><div class="sheet-handle"></div><h2>Sửa tài khoản Apple</h2><label class="account-photo">${avatarMarkup('native-avatar')}<span>Thay ảnh đại diện</span><input type="file" id="account-photo" accept="image/*" aria-label="Chọn ảnh đại diện"></label><label class="account-field">Tên ở Cài đặt<input id="account-name" maxlength="80" value="${escapeHTML(accountName())}"></label><label class="account-field">Tên tài khoản<input id="account-display-name" maxlength="80" value="${escapeHTML(accountDisplayName())}"></label><label class="account-field">Email<input id="account-email" type="email" maxlength="120" value="${escapeHTML(accountEmail())}"></label><button type="button" id="account-save">Lưu</button><button type="button" data-close="1">Hủy</button></div>`;
+ document.querySelector('.app').append(shell);
+ let previewURL='';
+ const close=()=>{if(previewURL)URL.revokeObjectURL(previewURL);shell.remove()};
+ const photo=shell.querySelector('#account-photo');
+ photo.addEventListener('change',()=>{if(previewURL)URL.revokeObjectURL(previewURL);const file=photo.files?.[0];if(!file)return;previewURL=URL.createObjectURL(file);const avatar=shell.querySelector('.account-photo .avatar');avatar.replaceWith(Object.assign(document.createElement('img'),{className:'avatar native-avatar',src:previewURL,alt:''}))});
+ shell.addEventListener('click',async e=>{
+  if(e.target.closest('[data-close]'))return close();
+  if(e.target.id!=='account-save')return;
+  const file=photo.files?.[0];
+  if(file){
+   try{
+    const img=new Image();
+    await new Promise((resolve,reject)=>{img.onload=resolve;img.onerror=reject;img.src=previewURL});
+    const side=Math.min(img.naturalWidth,img.naturalHeight);if(!side)throw Error('invalid image');
+    const canvas=document.createElement('canvas');canvas.width=256;canvas.height=256;
+    canvas.getContext('2d').drawImage(img,(img.naturalWidth-side)/2,(img.naturalHeight-side)/2,side,side,0,0,256,256);
+    state.accountAvatar=canvas.toDataURL('image/jpeg',.86);
+   }catch{return toast('Không thể đọc ảnh này')}
+  }
+  state.accountName=shell.querySelector('#account-name').value.trim()||'quan chuy dio';
+  state.accountDisplayName=shell.querySelector('#account-display-name').value.trim()||'Đỗ Viết Mạnh';
+  state.accountEmail=shell.querySelector('#account-email').value.trim()||'dovietmanh2006@gmail.com';
+  save();close();if(stack.length>1)pageCache[0]=makePage('root');render(true)
+ });
+}
 function toast(message){document.querySelector('.toast')?.remove();const el=document.createElement('div');el.className='toast';el.textContent=message;document.querySelector('.app').append(el);setTimeout(()=>el.remove(),1600)}
 function setSwitchState(row,on){const id=row.dataset.id,previous=state[id]??findDefault(id),control=row.querySelector('.switch');row.setAttribute('aria-checked',String(on));control?.classList.toggle('on',on);control?.style.setProperty('--thumb-x',on?'20px':'0px');control?.style.setProperty('--liquid-progress',on?'100%':'0%');if(previous===on)return;state[id]=on;save();if(id==='wifi-enabled'||id==='bluetooth-enabled'||id==='cellular-enabled')setTimeout(()=>render(true),650)}
+let accountHoldTimer=null,accountHoldStart=null,ignoreAccountClick=false;
+const clearAccountHold=()=>{clearTimeout(accountHoldTimer);accountHoldTimer=null;accountHoldStart=null};
+viewport.addEventListener('pointerdown',e=>{
+ const target=e.target.closest('.profile[data-id="apple"],.apple-head');
+ if(!target||(e.pointerType==='mouse'&&e.button!==0))return;
+ clearAccountHold();accountHoldStart={x:e.clientX,y:e.clientY};
+ accountHoldTimer=setTimeout(()=>{accountHoldTimer=null;accountHoldStart=null;ignoreAccountClick=true;setTimeout(()=>{ignoreAccountClick=false},850);showAccountEdit()},520)
+});
+viewport.addEventListener('pointermove',e=>{if(accountHoldStart&&Math.hypot(e.clientX-accountHoldStart.x,e.clientY-accountHoldStart.y)>12)clearAccountHold()});
+viewport.addEventListener('pointerup',clearAccountHold);viewport.addEventListener('pointercancel',clearAccountHold);
+viewport.addEventListener('contextmenu',e=>{if(e.target.closest('.profile[data-id="apple"],.apple-head')){e.preventDefault();clearAccountHold();ignoreAccountClick=true;setTimeout(()=>{ignoreAccountClick=false},850);showAccountEdit()}});
+viewport.addEventListener('click',e=>{if(ignoreAccountClick&&e.target.closest('.profile[data-id="apple"],.apple-head')){e.stopImmediatePropagation();e.preventDefault();ignoreAccountClick=false}},{capture:true});
 let switchGesture=null,ignoreSwitchClick=null;
 viewport.addEventListener('pointerdown',e=>{const switchEl=e.target.closest('.switch');if(!switchEl||(e.pointerType==='mouse'&&e.button!==0))return;const row=switchEl.closest('[data-action="toggle"]');if(!row)return;
  const on=switchEl.classList.contains('on'),travel=Math.max(20,switchEl.getBoundingClientRect().width-31);

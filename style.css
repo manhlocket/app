@@ -47,13 +47,18 @@ html,body,button,input{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text
 .root-page .group:nth-of-type(2) .row .row-trailing{color:var(--muted);font-size:16px}
 @media(prefers-reduced-motion:reduce){.enter-forward,.enter-back,.outgoing{animation:none!important}}
 /* Solid iOS-style controls; the search stays attached to the app frame. */
-.search-dock{position:absolute;left:0;right:0;bottom:calc(8px + env(safe-area-inset-bottom));z-index:6;padding:10px 21px 13px;background:transparent;pointer-events:none}
+.search-dock{position:absolute;left:0;right:0;bottom:max(16px,calc(env(safe-area-inset-bottom) - 18px));z-index:6;padding:10px 28px 13px;background:transparent;pointer-events:none}
 .search-dock[hidden]{display:none}
-.search-dock .search{height:49px;border:1px solid rgba(255,255,255,.25);border-radius:25px;background:#303034;box-shadow:inset 0 1px 1px #fff2,0 4px 14px #0004;pointer-events:auto;transition:border-color .2s,background-color .2s}
+.search-dock .search{height:48px;padding:0 18px;border:1px solid rgba(255,255,255,.16);border-radius:26px;box-shadow:inset 0 1px 1px #fff2,0 7px 18px #0005;backdrop-filter:blur(18px) saturate(145%);-webkit-backdrop-filter:blur(18px) saturate(145%);pointer-events:auto;transition:transform .3s cubic-bezier(.18,.82,.2,1),border-color .3s,background-color .3s}
+body.dark .search-dock .search{background:rgba(28,28,30,.8)}
 .search-dock .search svg{width:21px;height:21px}.search-dock .search input{font-size:17px;color:#fff}.search-dock .search input::placeholder{color:#aaaab0}
-.search-dock .search:focus-within{border-color:rgba(255,255,255,.5)}
-body.light .search-dock .search{background:#e9e9ed;border-color:#d2d2d7;color:#8e8e93}
+.search-dock .search:focus-within{transform:scale(1.01);border-color:rgba(255,255,255,.3)}
+body.light .search-dock .search{background:rgba(233,233,237,.82);border-color:#d2d2d7;color:#8e8e93}
 body.light .search-dock .search input{color:#000}body.light .search-dock .search input::placeholder{color:#73737b}
+/* Keep the dock dark and translucent like the supplied iPhone capture. */
+.search-dock .search,body.dark .search-dock .search,body.light .search-dock .search{background:rgba(23,23,25,.72);color:#f5f5f7;border:1px solid rgba(255,255,255,.16);box-shadow:inset 0 1px 1px rgba(255,255,255,.07),0 6px 20px rgba(0,0,0,.32);backdrop-filter:blur(12px) saturate(125%);-webkit-backdrop-filter:blur(12px) saturate(125%)}
+body.light .search-dock .search input{color:#f5f5f7}body.light .search-dock .search input::placeholder{color:#aaaab0}
+.profile,.apple-head{-webkit-touch-callout:none;user-select:none;-webkit-user-select:none}.account-photo{display:flex;align-items:center;gap:14px;margin:14px 0 18px;color:#0a84ff;font-size:16px;cursor:pointer}.account-photo .avatar{width:58px;height:58px}.account-photo input{display:none}.account-field{display:block;color:#aaa;font-size:13px;margin:11px 0}.account-field input{display:block;margin-top:5px}.account-sheet{max-height:min(88dvh,760px);overflow:auto}.avatar[src]{object-fit:cover;display:block}
 .switch,body.dark .switch{--thumb-x:0px;background:#626269;border:0;box-shadow:none;touch-action:pan-y;transition:background-color .2s ease}
 .switch.on,body.dark .switch.on{--thumb-x:20px;background:#30c85a}
 .switch:after,.switch.on:after,body.dark .switch:after,body.dark .switch.on:after{top:2px;left:2px;width:27px;height:27px;border:0;background:#fff;box-shadow:0 1px 3px #0004;transform:translate3d(var(--thumb-x),0,0);transition:transform .25s cubic-bezier(.2,.8,.2,1)}
