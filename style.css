@@ -170,3 +170,25 @@ body.light .root-page .compact-header::before{background:linear-gradient(to bott
 body.light .switch.liquid-switch{--liquid-color:color-mix(in srgb,#34c759 var(--liquid-progress),#e9e9ea)}
 @supports(transition-timing-function:linear(0,1)){.liquid-switch .lt-mask,.liquid-switch .lt-liquid__track,.liquid-switch .lt-knob{transition-timing-function:linear(0 0%,.6091 3.69%,1.0259 7.24%,1.1733 9.05%,1.283 10.92%,1.3562 12.87%,1.3948 14.95%,1.4014 16.03%,1.3999 17.16%,1.3731 19.64%,1.3202 22.27%,1.1394 29.39%,1.0582 33.17%,.9943 37.45%,.9734 39.64%,.9593 41.92%,.9505 45.08%,.9517 48.7%,.9924 63.02%,1.0046 71.2%,1.0061 78.24%,1 100%);transition-duration:.6s}}
 @media(prefers-reduced-motion:reduce){.liquid-switch .lt-mask,.liquid-switch .lt-liquid__track,.liquid-switch .lt-knob,.liquid-switch .lt-wrapper,.liquid-switch .lt-knob__shadow,.liquid-switch .lt-knob__cover{transition:none!important}}
+/* Wi-Fi, Accessibility, and Siri reference screens. */
+.screenshot-icon{width:28px;height:28px;background-size:402px 874px;background-repeat:no-repeat;background-color:transparent!important;border-radius:7px}
+.screenshot-hero{background-size:402px 874px;background-position:-32px -150px;background-repeat:no-repeat;background-color:transparent!important;box-shadow:none}
+.wifi-page .detail-nav>span{opacity:0}.wifi-page.scrolled .detail-nav>span{opacity:1}
+.wifi-edit{position:absolute;right:16px;top:8px;height:42px;padding:0 18px;border:1px solid #39393b;border-radius:25px;background:#202022;color:#f5f5f7;font-size:17px;font-weight:600}
+.wifi-page.scrolled .wifi-edit{opacity:0;pointer-events:none}
+.wifi-page .wifi-section-title{display:flex;align-items:center;gap:9px;color:#98989f}
+.wifi-page .wifi-section-title .bluetooth-spinner{display:inline-block;margin:0;width:16px;height:16px}
+.settings-hero-with-switch{padding-bottom:0}
+.settings-hero-with-switch .hero-toggle{border-top:1px solid #39393b;margin-top:18px}
+.settings-hero-with-switch .hero-toggle .row{margin:0 -12px;width:calc(100% + 24px);background:transparent;min-height:55px}
+.settings-hero-with-switch .hero-toggle .row-main{font-size:17px;min-height:55px}
+.settings-hero-with-switch .hero-toggle .row.plain .row-main{padding-left:12px}
+.accessibility-page .hero-card,.siri-page .hero-card,.wifi-page .hero-card{margin-top:16px;margin-bottom:33px}
+.accessibility-page .hero-card h1,.siri-page .hero-card h1,.wifi-page .hero-card h1{font-size:23px;line-height:1.2}
+.accessibility-page .hero-card p,.siri-page .hero-card p,.wifi-page .hero-card p{font-size:17px;line-height:1.36}
+.accessibility-page .group-title,.siri-page .group-title{font-size:17px;font-weight:600;text-transform:none;color:#98989f;margin:0 16px 9px}
+.accessibility-page .group,.siri-page .group{margin-bottom:38px}
+.accessibility-page .row,.siri-page .row{min-height:55px}
+.accessibility-page .row-main,.siri-page .row-main{min-height:55px;font-size:17px}
+.accessibility-page .row-trailing,.siri-page .row-trailing{font-size:17px}
+.siri-page .hero-followup{color:#98989f;font-size:15px;line-height:1.4;margin:-24px 32px 34px}
