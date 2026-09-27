@@ -364,20 +364,33 @@ viewport.addEventListener('click',e=>{
  if(navigationBusy||historyBackPending||performance.now()<suppressNavigationClickUntil){e.preventDefault();e.stopImmediatePropagation()}
 },{capture:true});
 viewport.addEventListener('touchstart',e=>{
- if(backGesture){if(e.touches.length!==1&&backGesture.active)settleSwipe(backGesture,false);return}
- if(stack.length<2||e.touches.length!==1||navigationBusy||historyBackPending||document.querySelector('.sheet-overlay'))return;
+ if(stack.length<2||e.touches.length!==1||document.querySelector('.sheet-overlay')){
+  if(backGesture?.active&&e.touches.length!==1)settleSwipe(backGesture,false);
+  return
+ }
  // Preserve sliders, text selection/editing, and switch dragging.
  if(e.target.closest('input,textarea,select,[contenteditable],.switch,[role="slider"],a'))return;
- const touch=e.touches[0];
- backGesture={identifier:touch.identifier,x:touch.clientX,y:touch.clientY,width:viewport.clientWidth,active:false,settling:false,frame:0,progress:0,samples:[{x:touch.clientX,time:performance.now()}]}
-},{passive:true});
+ const touch=e.touches[0],edge=touch.clientX-viewport.getBoundingClientRect().left<=24;
+ // Safari must yield its history-snapshot gesture at touchstart, not after a drag.
+ // Keep this listener non-passive and cancel only within the narrow left edge.
+ const ownsEdge=edge&&e.cancelable;
+ if(ownsEdge)e.preventDefault();
+ if(backGesture||navigationBusy||historyBackPending)return;
+ backGesture={identifier:touch.identifier,x:touch.clientX,y:touch.clientY,width:viewport.clientWidth,active:false,settling:false,frame:0,progress:0,ownsEdge,scrollStart:viewport.scrollTop,started:performance.now(),tapTarget:e.target.closest('button,[data-action]'),samples:[{x:touch.clientX,time:performance.now()}]}
+},{passive:false});
 viewport.addEventListener('touchmove',e=>{
  const gesture=backGesture;if(!gesture||gesture.settling)return;
  if(e.touches.length!==1){if(gesture.active)settleSwipe(gesture,false);else backGesture=null;return}
  const touch=e.touches[0],dx=touch.clientX-gesture.x,dy=touch.clientY-gesture.y;
+ if(gesture.scrolling){if(e.cancelable)e.preventDefault();viewport.scrollTop=gesture.scrollStart-dy;return}
  if(!gesture.active){
   // Lock intent once: vertical scrolling or a leftward drag cannot turn into Back.
-  if(Math.abs(dy)>10&&Math.abs(dy)>=Math.abs(dx)||dx < -10){backGesture=null;return}
+  if(Math.abs(dy)>10&&Math.abs(dy)>=Math.abs(dx)){
+   if(gesture.ownsEdge){gesture.scrolling=true;clearAccountHold();if(e.cancelable)e.preventDefault();viewport.scrollTop=gesture.scrollStart-dy}
+   else backGesture=null;
+   return
+  }
+  if(dx < -10){backGesture=null;return}
   if(dx<10||dx<Math.abs(dy)*1.25)return;
   if(!e.cancelable){backGesture=null;return}
   gesture.active=true;navigationBusy=true;clearAccountHold();
@@ -394,7 +407,17 @@ viewport.addEventListener('touchmove',e=>{
 viewport.addEventListener('touchend',e=>{
  const gesture=backGesture;if(!gesture||gesture.settling)return;
  const touch=Array.from(e.changedTouches).find(t=>t.identifier===gesture.identifier);if(!touch)return;
- if(!gesture.active){backGesture=null;return}
+ if(!gesture.active){
+  backGesture=null;
+  // Cancelling edge touchstart also cancels its click; restore genuine taps once.
+  if(gesture.ownsEdge){
+   if(e.cancelable)e.preventDefault();
+   if(!gesture.scrolling&&performance.now()-gesture.started<500&&Math.hypot(touch.clientX-gesture.x,touch.clientY-gesture.y)<10){
+    gesture.tapTarget?.click();suppressNavigationClickUntil=performance.now()+500
+   }
+  }
+  return
+ }
  if(e.cancelable)e.preventDefault();
  sampleSwipe(gesture,touch.clientX);
  const first=gesture.samples[0],last=gesture.samples.at(-1);
@@ -407,13 +430,16 @@ viewport.addEventListener('touchcancel',()=>{
  if(backGesture.active)settleSwipe(backGesture,false);else backGesture=null
 },{passive:true});
 window.addEventListener('popstate',e=>{
- const previousLength=stack.length,wasSwipe=swipeCompleting;
+ const previousLength=stack.length,wasSwipe=swipeCompleting,requestedByApp=historyBackPending;
  swipeCompleting=false;historyBackPending=false;discardBackGesture();
  stack=[...(e.state?.stack||['root'])];
  if(stack.length<previousLength)scrollOffsets.length=stack.length;
  while(scrollOffsets.length<stack.length)scrollOffsets.push(0);
- resetSwipe();render(false,wasSwipe?'back-swipe':stack.length<previousLength?'back':'forward');
+ // A browser-owned back gesture already animated a snapshot. Never replay it.
+ const goingBack=stack.length<previousLength;
+ resetSwipe();render(false,goingBack&&(wasSwipe||!requestedByApp)?'back-swipe':goingBack?'back':'forward');
  document.querySelectorAll('.swipe-under').forEach(under=>under.remove());updateScrollHeader()
 });
+if('scrollRestoration'in history)history.scrollRestoration='manual';
 history.replaceState({stack:['root']},'',location.pathname+location.search);render();
-if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=35').catch(()=>{}));
+if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js?v=36').catch(()=>{}));
