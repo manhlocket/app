@@ -260,3 +260,19 @@ body.light .switch.liquid-switch{--liquid-color:color-mix(in srgb,#34c759 var(--
 
 /* Siri icon extracted from the supplied screenshot. */
 .intelligence-reference,.siri-reference-hero{background-image:url("./assets/new-reference/siri-icon.png")!important;background-size:100% 100%!important;background-position:center!important;background-repeat:no-repeat!important;background-color:transparent!important}
+
+/* Let iOS render its own San Francisco shapes and spacing. Reserve room for
+   both sides of a settings row before any label or saved value can wrap. */
+html,body,button,input{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif;-webkit-font-smoothing:antialiased}
+.app .row-main,.app .row-trailing,.app .row-label small{letter-spacing:normal}
+.app .row-main{min-width:0;line-height:1.27}
+.app .row-label{min-width:0;overflow-wrap:break-word}
+.app .row-trailing{min-width:0;flex:0 1 auto;max-width:48%;white-space:normal;overflow-wrap:anywhere;text-overflow:clip;line-height:1.25;text-align:right}
+.app .row,.app .group,.app .rows,.app .page{min-width:0;max-width:100%}
+.app .detail-nav>span{display:block;max-width:calc(100% - 126px);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center}
+.app .hero-card h1,.app .hero-card p,.app .group-footer,.app .reference-note{overflow-wrap:break-word}
+.app .profile>span:not(.chevron){min-width:0;overflow-wrap:break-word}
+.app .apple-head p,.app .account-field,.app .connection-help span{min-width:0;overflow-wrap:anywhere}
+.app .hero-icon.native-hero{display:block;width:60px;height:60px;object-fit:contain;flex:none}
+.app .icon.native-icon{object-fit:contain}
+@media(max-width:360px){.app .row-main{font-size:16px}.app .row-trailing{font-size:15px}.app .reference-page .row-main{font-size:16px}.app .reference-page .row-trailing{font-size:15px}}
