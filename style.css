@@ -192,3 +192,8 @@ body.light .switch.liquid-switch{--liquid-color:color-mix(in srgb,#34c759 var(--
 .accessibility-page .row-main,.siri-page .row-main{min-height:55px;font-size:17px}
 .accessibility-page .row-trailing,.siri-page .row-trailing{font-size:17px}
 .siri-page .hero-followup{color:#98989f;font-size:15px;line-height:1.4;margin:-24px 32px 34px}
+
+/* Keep a single opaque page above the cached previous page throughout a back drag. */
+.viewport.is-swiping{background:var(--bg);user-select:none;-webkit-user-select:none;overflow-x:hidden}
+.viewport.is-swiping .row:active{background:var(--card)}
+.viewport{overscroll-behavior-x:none}
