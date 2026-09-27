@@ -263,7 +263,7 @@ body.light .switch.liquid-switch{--liquid-color:color-mix(in srgb,#34c759 var(--
 
 /* Let iOS render its own San Francisco shapes and spacing. Reserve room for
    both sides of a settings row before any label or saved value can wrap. */
-html,body,button,input{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif;-webkit-font-smoothing:antialiased}
+html,body,button,input{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text",sans-serif}
 .app .row-main,.app .row-trailing,.app .row-label small{letter-spacing:normal}
 .app .row-main{min-width:0;line-height:1.27}
 .app .row-label{min-width:0;overflow-wrap:break-word}
@@ -275,4 +275,18 @@ html,body,button,input{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text
 .app .apple-head p,.app .account-field,.app .connection-help span{min-width:0;overflow-wrap:anywhere}
 .app .hero-icon.native-hero{display:block;width:60px;height:60px;object-fit:contain;flex:none}
 .app .icon.native-icon{object-fit:contain}
-@media(max-width:360px){.app .row-main{font-size:16px}.app .row-trailing{font-size:15px}.app .reference-page .row-main{font-size:16px}.app .reference-page .row-trailing{font-size:15px}}
+/* One native iPhone type scale across the main list and its detail screens.
+   Narrow viewports wrap rows instead of making their text look smaller. */
+.app .large-title,.app .detail-title{font-size:34px;line-height:1.12;font-weight:700}
+.app .detail-nav,.app .compact-header{font-size:17px}
+.app .row-main,.app .root-page .row-main,.app .apple-page .row-main,.app .about-page .row-main,.app .bluetooth-page .row-main,.app .reference-page .row-main{font-size:17px;line-height:1.25}
+.app .root-page .row-trailing,.app .apple-page .row-trailing,.app .about-page .row-trailing,.app .bluetooth-page .row-trailing{font-size:17px}
+.app .reference-page .row-trailing{font-size:16px}
+.app .reference-page .row-label small{font-size:14px;line-height:1.3}
+.app .reference-page .group-title,.app .reference-heading,.app .accessibility-page .group-title,.app .siri-page .group-title{font-size:16px;line-height:1.3}
+.app .reference-page .group-footer,.app .reference-page .reference-note{font-size:14px;line-height:1.4}
+.app .reference-appearance-options button{font-size:16px}
+.app .reference-screentime>span:first-child{font-size:15px}
+.app .reference-screentime>strong{font-size:34px}
+.app .about-page .row[data-id="eid"] .row-label small{font-size:15px;line-height:1.3}
+@media(max-width:360px){.app .row-main,.app .reference-page .row-main{font-size:17px}.app .row-trailing,.app .reference-page .row-trailing{font-size:16px}}
